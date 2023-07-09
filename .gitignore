@@ -1,4 +1,3 @@
-
 # Logs
 logs
 *.log
@@ -123,7 +122,6 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-
 .yarn/*
 !.yarn/cache
 !.yarn/patches
@@ -131,3 +129,6 @@ dist
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# panda css
+styled-system
