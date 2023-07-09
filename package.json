@@ -11,6 +11,9 @@
   "author": "divopsor <divopsor@gmail.com>",
   "license": "MIT",
   "packageManager": "yarn@3.6.1",
+  "devDependencies": {
+    "typescript": "5.1.6"
+  },
   "resolutions": {
     "next": "13.4.9",
     "react": "18.2.0",

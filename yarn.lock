@@ -2722,6 +2722,8 @@ __metadata:
 "trendy-tracker-frontend@workspace:.":
   version: 0.0.0-use.local
   resolution: "trendy-tracker-frontend@workspace:."
+  dependencies:
+    typescript: 5.1.6
   languageName: unknown
   linkType: soft
 
