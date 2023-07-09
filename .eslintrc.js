@@ -7,6 +7,7 @@ module.exports = {
     "plugins": [
         "react",
         "@typescript-eslint",
+        "import"
     ],
     root: true,
     "extends": [
@@ -45,5 +46,24 @@ module.exports = {
         'import/extensions': "off",
         "import/no-extraneous-dependencies": "off",
         "@next/next/no-html-link-for-pages": "off",
+
+        "import/order": [
+            "error",
+            {
+                "groups": [
+                    "builtin",
+                    "external",
+                    "internal",
+                    "type",
+                    [ "parent", "sibling", "index" ],
+                    "unknown"
+                ],
+                "pathGroups": [],
+                "pathGroupsExcludedImportTypes": ["@tanstack*"],
+                "alphabetize": {
+                    "order": "asc"
+                }
+            }
+        ]
     }
 }
