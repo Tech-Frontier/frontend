@@ -48,6 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-n", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:15.7.0"],\
             ["eslint-plugin-promise", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:6.1.1"],\
             ["eslint-plugin-react", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:7.32.2"],\
+            ["husky", "npm:8.0.3"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
           ],\
           "linkType": "SOFT"\
@@ -2581,6 +2582,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["husky", [\
+        ["npm:8.0.3", {\
+          "packageLocation": "./.yarn/cache/husky-npm-8.0.3-b0b59c5127-837bc7e441.zip/node_modules/husky/",\
+          "packageDependencies": [\
+            ["husky", "npm:8.0.3"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["ignore", [\
         ["npm:5.2.4", {\
           "packageLocation": "./.yarn/cache/ignore-npm-5.2.4-fbe6e989e5-3d4c309c60.zip/node_modules/ignore/",\
@@ -4047,6 +4057,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-n", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:15.7.0"],\
             ["eslint-plugin-promise", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:6.1.1"],\
             ["eslint-plugin-react", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:7.32.2"],\
+            ["husky", "npm:8.0.3"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
           ],\
           "linkType": "SOFT"\
