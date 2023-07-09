@@ -1,0 +1,9 @@
+{
+  "name": "trendy-tracker-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@divopsor:Tech-Frontier/trendy-tracker-frontend",
+  "author": "divopsor <divopsor@gmail.com>",
+  "license": "MIT",
+  "packageManager": "yarn@3.6.1"
+}
