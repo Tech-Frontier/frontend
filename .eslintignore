@@ -1,0 +1,6 @@
+next.config.js
+.eslintrc.js
+*.d.ts
+.yarn
+.vscode
+.next
