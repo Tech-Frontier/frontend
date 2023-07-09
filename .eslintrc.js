@@ -15,6 +15,8 @@ module.exports = {
         "plugin:react/recommended",
         "airbnb-typescript",
         "next/core-web-vitals",
+        // @see https://github.com/import-js/eslint-plugin-import/tree/main#installation
+        "plugin:import/recommended",
     ],
     "overrides": [
         {
