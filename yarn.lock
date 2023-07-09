@@ -2532,11 +2532,20 @@ __metadata:
   resolution: "admin.trendy-tracker.kr@workspace:admin.trendy-tracker.kr"
   dependencies:
     "@pandacss/dev": ^0.6.0
+    "@types/eslint": ^8
     "@types/node": 20.4.1
     "@types/react": 18.2.14
     "@types/react-dom": 18.2.6
-    eslint: 8.44.0
+    "@typescript-eslint/eslint-plugin": ^5.61.0
+    "@typescript-eslint/parser": ^5.61.0
+    eslint: ^8.44.0
+    eslint-config-airbnb-typescript: ^17.0.0
     eslint-config-next: 13.4.9
+    eslint-import-resolver-typescript: ^3.5.5
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-n: ^15.0.0
+    eslint-plugin-promise: ^6.0.0
+    eslint-plugin-react: latest
     next: 13.4.9
     react: 18.2.0
     react-dom: 18.2.0
@@ -4250,7 +4259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:8.44.0, eslint@npm:^8.44.0":
+"eslint@npm:^8.44.0":
   version: 8.44.0
   resolution: "eslint@npm:8.44.0"
   dependencies:
@@ -8469,11 +8478,20 @@ __metadata:
   resolution: "trendy-tracker.kr@workspace:trendy-tracker.kr"
   dependencies:
     "@pandacss/dev": ^0.6.0
+    "@types/eslint": ^8
     "@types/node": 20.4.1
     "@types/react": 18.2.14
     "@types/react-dom": 18.2.6
-    eslint: 8.44.0
+    "@typescript-eslint/eslint-plugin": ^5.61.0
+    "@typescript-eslint/parser": ^5.61.0
+    eslint: ^8.44.0
+    eslint-config-airbnb-typescript: ^17.0.0
     eslint-config-next: 13.4.9
+    eslint-import-resolver-typescript: ^3.5.5
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-n: ^15.0.0
+    eslint-plugin-promise: ^6.0.0
+    eslint-plugin-react: latest
     next: 13.4.9
     react: 18.2.0
     react-dom: 18.2.0
