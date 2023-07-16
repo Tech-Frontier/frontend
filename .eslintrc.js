@@ -1,5 +1,13 @@
 module.exports = {
-    "env": {
+    settings: {
+        // NOTE: 아래 내용을 추가해야 ts 로 추가한 alias paths 설정을 eslint 에서 읽을 수 있음
+        "import/resolver": {
+            "typescript": {
+              "project": "*/tsconfig.json",
+            }
+        }
+    },
+    env: {
         "browser": true,
         "es2021": true
     },
@@ -38,6 +46,7 @@ module.exports = {
         "project": "./tsconfig.json",
     },
     "rules": {
+        "import/no-unresolved": "error",
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/no-unused-vars": ["error"],
 
@@ -64,6 +73,8 @@ module.exports = {
                     "order": "asc"
                 }
             }
-        ]
+        ],
+
+        "@typescript-eslint/no-use-before-define": "off"
     }
 }
