@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "trendy-tracker.kr",
-    "admin.trendy-tracker.kr"
+    "admin.trendy-tracker.kr",
+    "shared/*"
   ],
   "version": "1.0.0",
   "main": "index.js",
