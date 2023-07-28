@@ -68,5 +68,7 @@ module.exports = {
     "react/jsx-props-no-multi-spaces": "error",
     "key-spacing": ["error", { beforeColon: false }],
     "eol-last": ["error", "always"],
+    "no-trailing-spaces": "error",
+    "no-multi-spaces": "error",
   },
 };

@@ -10,31 +10,31 @@ interface TagProps extends HTMLAttributes<HTMLSpanElement> {
   borderColor?: CSSProperties['borderColor'];
 }
 
-// NOTE: leftAddon, rightAddon 추후 지원... 
+// NOTE: leftAddon, rightAddon 추후 지원...
 
 export function Tag(
-  { 
-    bgColor, 
-    textColor, 
-    size = 'medium', 
-    variant = 'default', 
+  {
+    bgColor,
+    textColor,
+    size = 'medium',
+    variant = 'default',
     borderColor,
-    ...restProps 
+    ...restProps
   }: TagProps) {
-  return ( 
-    <span 
-      style={{ 
+  return (
+    <span
+      style={{
         ...getTagBaseStyle,
         ...getTagSizeStyle(size),
         ...getTagVariantStyle(variant, borderColor),
-        ...getTagColorStyle(bgColor, textColor), 
+        ...getTagColorStyle(bgColor, textColor),
       }}
       {...restProps}
     />
   );
 }
 
-const getTagBaseStyle =  {
+const getTagBaseStyle = {
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
