@@ -3,7 +3,7 @@ import { css } from '@styled-system/css';
 
 export function Logo() {
   return (
-    <Link 
+    <Link
       href="/"
       className={css({
         fontFamily: 'Noto Sans KR',
