@@ -4,10 +4,8 @@
 # Get the current branch name
 branch_name=$(git rev-parse --symbolic-full-name HEAD)
 
-echo $branch_name
-
 # If the current branch is main, print an error message
-if [[ $branch_name == "fix/main-pre-push" ]]; then
+if [[ $branch_name == "refs/heads/fix/main-pre-push" ]]; then
   echo "You are currently on the main branch. Please switch to a different branch."
   exit 1
 fi
