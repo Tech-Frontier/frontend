@@ -20,12 +20,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:admin.trendy-tracker.kr"\
       },\
       {\
-        "name": "@tech-frontier/shared-tag",\
-        "reference": "workspace:shared/chip"\
-      },\
-      {\
         "name": "@tech-frontier/shared-sample",\
         "reference": "workspace:shared/sample"\
+      },\
+      {\
+        "name": "@tech-frontier/shared-tag",\
+        "reference": "workspace:shared/tag"\
       },\
       {\
         "name": "@tech-frontier/shared-text",\
@@ -40,7 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["@tech-frontier/shared-sample", ["workspace:shared/sample"]],\
-      ["@tech-frontier/shared-tag", ["workspace:shared/chip"]],\
+      ["@tech-frontier/shared-tag", ["workspace:shared/tag"]],\
       ["@tech-frontier/shared-text", ["workspace:shared/text"]],\
       ["admin.trendy-tracker.kr", ["workspace:admin.trendy-tracker.kr"]],\
       ["trendy-tracker-frontend", ["workspace:."]],\
@@ -1788,10 +1788,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@tech-frontier/shared-tag", [\
-        ["workspace:shared/chip", {\
-          "packageLocation": "./shared/chip/",\
+        ["workspace:shared/tag", {\
+          "packageLocation": "./shared/tag/",\
           "packageDependencies": [\
-            ["@tech-frontier/shared-tag", "workspace:shared/chip"],\
+            ["@tech-frontier/shared-tag", "workspace:shared/tag"],\
             ["@types/eslint", "npm:8.44.0"],\
             ["@types/node", "npm:20.4.1"],\
             ["@types/react", "npm:18.2.14"],\
@@ -10138,7 +10138,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["trendy-tracker.kr", "workspace:trendy-tracker.kr"],\
             ["@pandacss/dev", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:0.6.0"],\
-            ["@tech-frontier/shared-tag", "workspace:shared/chip"],\
+            ["@tech-frontier/shared-tag", "workspace:shared/tag"],\
             ["@tech-frontier/shared-text", "workspace:shared/text"],\
             ["@types/eslint", "npm:8.44.0"],\
             ["@types/node", "npm:20.4.1"],\

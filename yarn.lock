@@ -1397,9 +1397,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tech-frontier/shared-tag@workspace:^, @tech-frontier/shared-tag@workspace:shared/chip":
+"@tech-frontier/shared-tag@workspace:^, @tech-frontier/shared-tag@workspace:shared/tag":
   version: 0.0.0-use.local
-  resolution: "@tech-frontier/shared-tag@workspace:shared/chip"
+  resolution: "@tech-frontier/shared-tag@workspace:shared/tag"
   dependencies:
     "@types/eslint": ^8
     "@types/node": 20.4.1
