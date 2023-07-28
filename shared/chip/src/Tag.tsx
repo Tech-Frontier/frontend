@@ -1,6 +1,6 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, HTMLAttributes } from 'react';
 
-interface TagProps extends React.HTMLAttributes<HTMLSpanElement> {
+interface TagProps extends HTMLAttributes<HTMLSpanElement> {
   size?: 'small' | 'medium' | 'large';
   variant?: 'border' | 'default';
   bgColor?: CSSProperties['backgroundColor'];
