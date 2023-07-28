@@ -10,7 +10,7 @@ export function Header({ className }: { className?: string }) {
         <Logo />
         <Menus>
           {
-            MENUS.map(({ path, title }: any) => 
+            MENUS.map(({ path, title }: any) =>
               <Menu key={`${path}`}>
                 <ActiveLink path={path} title={title} />
               </Menu>,
@@ -31,18 +31,18 @@ const Wrapper = styled('div', {
 const Nav = styled('nav', {
   maxWidth: '1200px',
   margin: '0 auto',
-  display: 'flex', 
+  display: 'flex',
   gap: '12px',
   justifyContent: 'space-between',
-  paddingRight: '12px', 
-  paddingLeft: '12px', 
+  paddingRight: '12px',
+  paddingLeft: '12px',
   alignItems: 'center',
   padding: '8px',
   height: '100%',
 });
 
 const Menus = styled('ul', {
-  display: 'flex', 
+  display: 'flex',
   gap: '12px',
   listStyle: 'none',
 });
