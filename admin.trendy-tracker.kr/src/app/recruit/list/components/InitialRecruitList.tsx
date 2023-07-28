@@ -7,10 +7,10 @@ export async function InitialRecruitList() {
   return (
     <>
       {
-        data.map(x => 
-          <RecruitItem 
-            key={`${x.company}-${encodeURIComponent(x.url)}`} 
-            data={x} 
+        data.map(x =>
+          <RecruitItem
+            key={`${x.company}-${encodeURIComponent(x.url)}`}
+            data={x}
           />,
         )
       }

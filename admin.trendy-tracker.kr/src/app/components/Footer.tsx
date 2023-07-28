@@ -4,8 +4,8 @@ import { css } from '@styled-system/css';
 
 export function Footer({ className }: { className?: string }) {
   return (
-    <Wraper className={className}>
-      <Link 
+    <Wrapper className={className}>
+      <Link
         href="https://github.com/Tech-Frontier"
         className={css({
           _hover: {
@@ -16,11 +16,11 @@ export function Footer({ className }: { className?: string }) {
       >
         ⓒ Tech-Frontier
       </Link>
-    </Wraper>
+    </Wrapper>
   );
 }
 
-const Wraper = styled('footer', {
+const Wrapper = styled('footer', {
   fontSize: '1rem',
   fontWeight: 'bold',
   margin: '0 auto',
