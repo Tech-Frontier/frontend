@@ -63,5 +63,10 @@ module.exports = {
     ],
 
     "@typescript-eslint/no-use-before-define": "off",
+
+    "no-multiple-empty-lines": ["error", { max: 1, maxBOF: 0, maxEOF: 0 }],
+    "react/jsx-props-no-multi-spaces": "error",
+    "key-spacing": ["error", { beforeColon: false }],
+    "eol-last": ["error", "always"],
   },
 };
