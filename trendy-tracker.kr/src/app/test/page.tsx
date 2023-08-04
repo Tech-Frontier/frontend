@@ -1,3 +1,4 @@
+import { Button } from '@tech-frontier/shared-button';
 import { Tag } from '@tech-frontier/shared-tag';
 import { Text } from '@tech-frontier/shared-text';
 
@@ -27,6 +28,19 @@ export default function Test() {
       <br />
       <br />
       <Tag size="small" variant='border' bgColor="transparent">Tag</Tag>
+      <br />
+      <br />
+      <Text typography='Large'>inline 버튼</Text>
+      <br />
+      <Button size='large'>Button</Button>
+      <Button>Button</Button>
+      <Button size='small'>Button</Button>
+      <Text typography='Large'>block 버튼</Text>
+      <Button size='large' display='block'>Button</Button>
+      <br />
+      <Button display='block'>Button</Button>
+      <br />
+      <Button size='small' display='block'>Button</Button>
     </>
   );
 }
