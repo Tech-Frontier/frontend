@@ -1373,6 +1373,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tech-frontier/shared-button@workspace:^, @tech-frontier/shared-button@workspace:shared/button":
+  version: 0.0.0-use.local
+  resolution: "@tech-frontier/shared-button@workspace:shared/button"
+  dependencies:
+    "@types/eslint": ^8
+    "@types/node": 20.4.1
+    "@types/react": 18.2.14
+    "@types/react-dom": 18.2.6
+    "@typescript-eslint/eslint-plugin": ^5.61.0
+    "@typescript-eslint/parser": ^5.61.0
+    eslint: ^8.44.0
+    eslint-config-airbnb-typescript: ^17.0.0
+    eslint-config-next: 13.4.9
+    eslint-import-resolver-typescript: ^3.5.5
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-n: ^15.0.0
+    eslint-plugin-promise: ^6.0.0
+    eslint-plugin-react: latest
+    react: 18.2.0
+    react-dom: 18.2.0
+    typescript: 5.1.6
+  languageName: unknown
+  linkType: soft
+
 "@tech-frontier/shared-sample@workspace:shared/sample":
   version: 0.0.0-use.local
   resolution: "@tech-frontier/shared-sample@workspace:shared/sample"
@@ -8550,6 +8574,7 @@ __metadata:
   resolution: "trendy-tracker.kr@workspace:trendy-tracker.kr"
   dependencies:
     "@pandacss/dev": ^0.6.0
+    "@tech-frontier/shared-button": "workspace:^"
     "@tech-frontier/shared-tag": "workspace:^"
     "@tech-frontier/shared-text": "workspace:^"
     "@types/eslint": ^8
