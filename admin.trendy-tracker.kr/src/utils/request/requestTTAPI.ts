@@ -2,7 +2,7 @@ import { RequestOptions, request } from './common';
 
 function getBaseURL() {
   if (typeof window === 'undefined') {
-    return 'http://127.0.0.1:3000';
+    return 'https://admin.trendy-tracker.kr';
   }
 
   return window.location.origin;
