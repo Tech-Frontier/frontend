@@ -45,9 +45,14 @@ export function RecruitListClient({ children }: { children: ReactNode }) {
 
       <Spacing size={20}/>
 
-      <div className={css({ textAlign: 'center' })}>
-        { showMore && <button onClick={() => setPageNo(pageNo + 1)}>더보기</button> }
-      </div>
+      {
+        showMore &&
+          (
+            <div className={css({ textAlign: 'center' })}>
+              <button onClick={() => setPageNo(pageNo + 1)}>더보기</button>
+            </div>
+          )
+      }
 
       <Spacing size={40}/>
     </>
