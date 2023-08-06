@@ -1469,6 +1469,32 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@tech-frontier/spacing@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@tech-frontier/spacing@npm:0.1.0"
+  dependencies:
+    eslint: 8.44.0
+    eslint-config-next: 13.4.9
+    react: ^18
+    react-dom: ^18
+    typescript: 5.1.6
+  checksum: a04228e333a514de9f78f5efb433a8ca9cf3c6a19e8f4ab742f65363a1f84ab91b3fb788c71b8b0dde7ac7e55aeceb87678b7bc5c46ea820e0dbd68844649568
+  languageName: node
+  linkType: hard
+
+"@tech-frontier/ui-desktop@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@tech-frontier/ui-desktop@npm:0.5.0"
+  dependencies:
+    eslint: 8.44.0
+    eslint-config-next: 13.4.9
+    react: ^18
+    react-dom: ^18
+    typescript: 5.1.6
+  checksum: f9dfdf7d6920b6ac8e7b6485d5a2bee0a14229f300958fa6c03ed8dbf69430d46b556826795bd1186a8c10fd632ee14b6dc09a58544b7328d69135da54d5c0f7
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -2628,6 +2654,8 @@ __metadata:
   resolution: "admin.trendy-tracker.kr@workspace:admin.trendy-tracker.kr"
   dependencies:
     "@pandacss/dev": ^0.6.0
+    "@tech-frontier/spacing": ^0.1.0
+    "@tech-frontier/ui-desktop": ^0.5.0
     "@types/eslint": ^8
     "@types/node": 20.4.1
     "@types/react": 18.2.14
@@ -4355,7 +4383,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.44.0":
+"eslint@npm:8.44.0, eslint@npm:^8.44.0":
   version: 8.44.0
   resolution: "eslint@npm:8.44.0"
   dependencies:

@@ -1,11 +1,17 @@
+import { Header } from '@tech-frontier/ui-desktop';
 import { styled } from '@/utils/styled';
+import { css, cx } from '@styled-system/css';
 import { ActiveLink } from './ActiveLink';
 import { Logo } from './Logo';
 import { MENUS } from '../constants';
 
-export function Header({ className }: { className?: string }) {
+export function AdminHeader({ className }: { className?: string }) {
   return (
-    <Wrapper className={className}>
+    <Header className={cx(css({
+      position: 'sticky',
+      top: '0px',
+      background: '#f6f5f4',
+    }), className)}>
       <Nav>
         <Logo />
         <Menus>
@@ -18,15 +24,9 @@ export function Header({ className }: { className?: string }) {
           }
         </Menus>
       </Nav>
-    </Wrapper>
+    </Header>
   );
 }
-
-const Wrapper = styled('div', {
-  position: 'sticky',
-  top: '0px',
-  background: '#f6f5f4',
-});
 
 const Nav = styled('nav', {
   maxWidth: '1200px',

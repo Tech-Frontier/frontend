@@ -1,7 +1,8 @@
-import { h, styled } from '@/utils/styled';
+import { styled } from '@/utils/styled';
+import { css } from '@styled-system/css';
+import { AdminHeader } from './components/AdminHeader';
 import { Footer } from './components/Footer';
-import { Header } from './components/Header';
-import { Spacing } from './components/Spacing';
+import '@tech-frontier/ui-desktop/style.css';
 import './globals.css';
 
 export const metadata = {
@@ -12,15 +13,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body>
-        <Header className={h(40)}/>
-
-        <Spacing h={40} />
+        <AdminHeader className={css({
+          height: '60px',
+        })} />
 
         <Wrapper>
           {children}
         </Wrapper>
 
-        <Footer className={h(40)}/>
+        <Footer className={css({
+          height: '40px',
+        })}/>
       </body>
     </html>
   );
