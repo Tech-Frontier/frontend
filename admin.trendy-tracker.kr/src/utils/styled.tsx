@@ -6,12 +6,9 @@ type Element = Parameters<typeof createElement>[0];
 
 export function styled(el: Element, styles: SystemStyleObject) {
   return function StyledComponent(props: any) {
-    return createElement(el, { ...props, className: cx(props.className, css(styles)) });
+    return createElement(el, {
+      ...props,
+      className: cx(props.className, css(styles)),
+    });
   };
-}
-
-export function h(height: number) {
-  return css({
-    height: `${height}px`,
-  });
 }

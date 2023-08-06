@@ -70,5 +70,6 @@ module.exports = {
     "eol-last": ["error", "always"],
     "no-trailing-spaces": "error",
     "no-multi-spaces": "error",
+    "object-property-newline": ["error"],
   },
 };

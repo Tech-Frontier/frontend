@@ -1,5 +1,7 @@
 export interface Recruit {
+  id: number;
   company: string;
+  occupation: string;
   url: string;
-  techStackList: string[];
+  techList: string[];
 }

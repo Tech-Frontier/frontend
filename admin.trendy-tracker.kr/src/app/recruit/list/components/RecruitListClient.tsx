@@ -1,7 +1,9 @@
 'use client';
 
+import { Spacing } from '@tech-frontier/spacing';
 import { ReactNode, useEffect, useState } from 'react';
-import { RecruitItem } from './RecruitItem';
+import { css } from '@styled-system/css';
+import { RecruitItem, RecruitItemHeader } from './RecruitItem';
 import { fetchRecruitList } from '../actions/fetchRecruitList';
 
 type RecruitList = Awaited<ReturnType<typeof fetchRecruitList>>['data'];
@@ -28,12 +30,26 @@ export function RecruitListClient({ children }: { children: ReactNode }) {
 
   return (
     <>
-      <ul>
+      <Spacing size={40}/>
+
+      <ul className={css({
+        borderTop: '1px solid',
+        '& li': {
+          padding: '10px',
+        },
+      })}>
+        <RecruitItemHeader />
         {children}
         {list.map(x => <RecruitItem key={`${x.company}-${encodeURIComponent(x.url)}`} data={x}/>)}
       </ul>
 
-      { showMore && <button onClick={() => setPageNo(pageNo + 1)}>더보기</button> }
+      <Spacing size={20}/>
+
+      <div className={css({ textAlign: 'center' })}>
+        { showMore && <button onClick={() => setPageNo(pageNo + 1)}>더보기</button> }
+      </div>
+
+      <Spacing size={40}/>
     </>
   );
 }
