@@ -10,6 +10,7 @@
     "prepare": "panda codegen"
   },
   "dependencies": {
+    "@divops-packages/node-utils": "^0.1.2",
     "@tech-frontier/spacing": "^0.1.0",
     "@tech-frontier/ui-desktop": "^0.6.2",
     "eslint": "8.44.0",

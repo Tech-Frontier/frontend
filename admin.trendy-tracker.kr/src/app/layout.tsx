@@ -1,5 +1,7 @@
 import { styled } from '@/utils/styled';
 import { css } from '@styled-system/css';
+import { AuthCheckClient } from './AuthCheckClient';
+import { AuthCheckServer } from './AuthCheckServer';
 import { AdminHeader } from './components/AdminHeader';
 import { Footer } from './components/Footer';
 import '@tech-frontier/ui-desktop/style.css';
@@ -24,6 +26,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer className={css({
           height: '40px',
         })}/>
+        <AuthCheckClient />
+        <AuthCheckServer />
       </body>
     </html>
   );

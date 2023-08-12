@@ -667,6 +667,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@divops-packages/node-utils", [\
+        ["npm:0.1.2", {\
+          "packageLocation": "./.yarn/cache/@divops-packages-node-utils-npm-0.1.2-0f53ff04f7-9d4ba4ff0f.zip/node_modules/@divops-packages/node-utils/",\
+          "packageDependencies": [\
+            ["@divops-packages/node-utils", "npm:0.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@emmetio/abbreviation", [\
         ["npm:2.3.3", {\
           "packageLocation": "./.yarn/cache/@emmetio-abbreviation-npm-2.3.3-ca85b1f1d7-4a71a2bb12.zip/node_modules/@emmetio/abbreviation/",\
@@ -3322,6 +3331,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./admin.trendy-tracker.kr/",\
           "packageDependencies": [\
             ["admin.trendy-tracker.kr", "workspace:admin.trendy-tracker.kr"],\
+            ["@divops-packages/node-utils", "npm:0.1.2"],\
             ["@pandacss/dev", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:0.6.0"],\
             ["@tech-frontier/spacing", "npm:0.1.0"],\
             ["@tech-frontier/ui-desktop", "npm:0.6.2"],\
