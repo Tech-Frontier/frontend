@@ -452,6 +452,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@divops-packages/node-utils@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "@divops-packages/node-utils@npm:0.1.2"
+  checksum: 9d4ba4ff0f33773d8b64af461a92dcfdc5eb49168ba6cfe3369f89e502606718f4c757e873512a63bfceb498c6fe7150e32e43f44dfb9e2ee3c3a0ae4b7e70b7
+  languageName: node
+  linkType: hard
+
 "@emmetio/abbreviation@npm:^2.3.3":
   version: 2.3.3
   resolution: "@emmetio/abbreviation@npm:2.3.3"
@@ -2653,6 +2660,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "admin.trendy-tracker.kr@workspace:admin.trendy-tracker.kr"
   dependencies:
+    "@divops-packages/node-utils": ^0.1.2
     "@pandacss/dev": ^0.6.0
     "@tech-frontier/spacing": ^0.1.0
     "@tech-frontier/ui-desktop": ^0.6.2

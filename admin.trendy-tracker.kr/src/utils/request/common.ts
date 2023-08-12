@@ -1,5 +1,5 @@
 export interface RequestContext {
-  baseURL: string;
+  baseURL?: string;
 }
 
 export interface RequestOptions {
@@ -39,9 +39,8 @@ export async function request(
     params,
     additionalHeaders = {},
   }: RequestOptions,
-  {
-    baseURL,
-  }: RequestContext) {
+  context: RequestContext = {}) {
+  const { baseURL = '' } = context;
   if (!pathname.startsWith('/')) {
     throw new Error(`pathname must starts with "/".(${pathname})`);
   }
