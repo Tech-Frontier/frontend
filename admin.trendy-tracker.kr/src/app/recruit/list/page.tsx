@@ -7,7 +7,7 @@ export default function RecruitListPage() {
   return (
     <main>
       <Spacing size={40}/>
-      <Text as="h1">채용 공고 리스트</Text>
+      <Text rank="1">채용 공고 리스트</Text>
 
       <RecruitListClient>
         <InitialRecruitList />

@@ -4,13 +4,13 @@ import { Spacing } from '@tech-frontier/spacing';
 import { Button } from '@tech-frontier/ui-desktop';
 import { ReactNode, useEffect, useState } from 'react';
 import { css } from '@styled-system/css';
-import { RecruitItem, RecruitItemHeader } from './RecruitItem';
-import { fetchRecruitList } from '../actions/fetchRecruitList';
+import { TechStackListItem, TechStackListItemHeader } from './TechStackListItem';
+import { fetchTechStackList } from './actions';
 
-type RecruitList = Awaited<ReturnType<typeof fetchRecruitList>>['data'];
+type TechStackList = Awaited<ReturnType<typeof fetchTechStackList>>['data'];
 
-export function RecruitListClient({ children }: { children: ReactNode }) {
-  const [list, setList] = useState<RecruitList>([]);
+export function TechStackListClient({ children }: { children: ReactNode }) {
+  const [list, setList] = useState<TechStackList>([]);
   const [showMore, setShowMore] = useState<boolean>(true);
   const [pageNo, setPageNo] = useState(1);
 
@@ -20,7 +20,7 @@ export function RecruitListClient({ children }: { children: ReactNode }) {
     }
 
     (async () => {
-      const { data, isEnd } = await fetchRecruitList({ pageNo });
+      const { data, isEnd } = await fetchTechStackList({ pageNo });
       const nextList = [...list, ...data];
 
       setList(nextList);
@@ -39,9 +39,9 @@ export function RecruitListClient({ children }: { children: ReactNode }) {
           padding: '10px',
         },
       })}>
-        <RecruitItemHeader />
+        <TechStackListItemHeader />
         {children}
-        {list.map(x => <RecruitItem key={`${x.company}-${encodeURIComponent(x.url)}`} data={x}/>)}
+        {list.map((x, i) => <TechStackListItem key={`${i}-${encodeURIComponent(x)}`} tech={x}/>)}
       </ul>
 
       <Spacing size={20}/>
@@ -49,7 +49,9 @@ export function RecruitListClient({ children }: { children: ReactNode }) {
       {
         showMore &&
           (
-            <div className={css({ textAlign: 'center' })}>
+            <div className={css({
+              textAlign: 'center',
+            })}>
               <Button onClick={() => setPageNo(pageNo + 1)} bgColor="#F6F5F4">More</Button>
             </div>
           )

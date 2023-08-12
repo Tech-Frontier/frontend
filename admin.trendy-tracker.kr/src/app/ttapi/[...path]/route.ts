@@ -26,24 +26,29 @@ export async function GET(req: NextRequest) {
 }
 
 export async function POST(req: NextRequest) {
-  const url = new URL(req.url);
+  try {
+    const url = new URL(req.url);
 
-  const pathname = url.pathname.replace('/ttapi', '');
+    const pathname = url.pathname.replace('/ttapi', '');
 
-  if (TTAPI_TOKEN === '') {
-    return NextResponse.json({ error: 'Internal Server Error[KEY]' }, { status: 500 });
+    if (TTAPI_TOKEN === '') {
+      return NextResponse.json({ error: 'Internal Server Error[KEY]' }, { status: 500 });
+    }
+
+    const res = await fetch(`${BASE_URL}${pathname}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `bearer ${TTAPI_TOKEN}`,
+      },
+      body: req.body,
+    });
+
+    const data = await res.json();
+
+    return NextResponse.json(data);
+  } catch (error:any) {
+    console.error(error.message);
+    return NextResponse.json({ message: error.message }, { status: 500 });
   }
-
-  const res = await fetch(`${BASE_URL}${pathname}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `bearer ${TTAPI_TOKEN}`,
-    },
-    body: req.body,
-  });
-
-  const data = await res.json();
-
-  return NextResponse.json(data);
 }

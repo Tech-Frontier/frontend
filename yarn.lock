@@ -1482,16 +1482,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tech-frontier/ui-desktop@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "@tech-frontier/ui-desktop@npm:0.5.0"
+"@tech-frontier/ui-desktop@npm:^0.6.2":
+  version: 0.6.2
+  resolution: "@tech-frontier/ui-desktop@npm:0.6.2"
   dependencies:
     eslint: 8.44.0
     eslint-config-next: 13.4.9
     react: ^18
     react-dom: ^18
     typescript: 5.1.6
-  checksum: f9dfdf7d6920b6ac8e7b6485d5a2bee0a14229f300958fa6c03ed8dbf69430d46b556826795bd1186a8c10fd632ee14b6dc09a58544b7328d69135da54d5c0f7
+  checksum: a9061eba52ea6ae52a8cb1737776ab0ecfd129f563e6db3a42244b99633f83f1a5ab0ca638af1386a75250a3b3dfeb95f1c59b1a984760657f1b9a6ce327b4a5
   languageName: node
   linkType: hard
 
@@ -2655,7 +2655,7 @@ __metadata:
   dependencies:
     "@pandacss/dev": ^0.6.0
     "@tech-frontier/spacing": ^0.1.0
-    "@tech-frontier/ui-desktop": ^0.5.0
+    "@tech-frontier/ui-desktop": ^0.6.2
     "@types/eslint": ^8
     "@types/node": 20.4.1
     "@types/react": 18.2.14
