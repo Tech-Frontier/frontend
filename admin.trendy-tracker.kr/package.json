@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "LOCAL=true next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@tech-frontier/spacing": "^0.1.0",
-    "@tech-frontier/ui-desktop": "^0.5.0",
+    "@tech-frontier/ui-desktop": "^0.6.2",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "next": "13.4.9",

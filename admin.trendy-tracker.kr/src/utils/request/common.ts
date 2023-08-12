@@ -46,7 +46,7 @@ export async function request(
     throw new Error(`pathname must starts with "/".(${pathname})`);
   }
 
-  console.log(`${baseURL}${pathname}${params != null && method === 'GET' ? convertToQueryString(params) : ''}`);
+  console.log(`${method} ${baseURL}${pathname}${params != null && method === 'GET' ? convertToQueryString(params) : ''}`);
 
   const response = await fetch(
     `${baseURL}${pathname}${params != null && method === 'GET' ? convertToQueryString(params) : ''}`
@@ -60,8 +60,7 @@ export async function request(
     });
 
   if (!response.ok) {
-    console.log(response);
-    throw new Error(`${pathname} API is failed.`);
+    throw new Error(`[Error] ${method} ${pathname} (${response.statusText})`);
   }
 
   return response.json();

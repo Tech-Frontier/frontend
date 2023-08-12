@@ -1885,10 +1885,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@tech-frontier/ui-desktop", [\
-        ["npm:0.5.0", {\
-          "packageLocation": "./.yarn/cache/@tech-frontier-ui-desktop-npm-0.5.0-9aeae73c30-f9dfdf7d69.zip/node_modules/@tech-frontier/ui-desktop/",\
+        ["npm:0.6.2", {\
+          "packageLocation": "./.yarn/cache/@tech-frontier-ui-desktop-npm-0.6.2-469829a767-a9061eba52.zip/node_modules/@tech-frontier/ui-desktop/",\
           "packageDependencies": [\
-            ["@tech-frontier/ui-desktop", "npm:0.5.0"],\
+            ["@tech-frontier/ui-desktop", "npm:0.6.2"],\
             ["eslint", "npm:8.44.0"],\
             ["eslint-config-next", "virtual:ab6dc7969d89de9fb6f03de2284ebcc00edba2663382165d01834f854ee6ef608472b53f82d143c51c1a5032c634029fc4f235b6ee27fa87d5c0b2838cf66906#npm:13.4.9"],\
             ["react", "npm:18.2.0"],\
@@ -3324,7 +3324,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["admin.trendy-tracker.kr", "workspace:admin.trendy-tracker.kr"],\
             ["@pandacss/dev", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:0.6.0"],\
             ["@tech-frontier/spacing", "npm:0.1.0"],\
-            ["@tech-frontier/ui-desktop", "npm:0.5.0"],\
+            ["@tech-frontier/ui-desktop", "npm:0.6.2"],\
             ["@types/eslint", "npm:8.44.0"],\
             ["@types/node", "npm:20.4.1"],\
             ["@types/react", "npm:18.2.14"],\
