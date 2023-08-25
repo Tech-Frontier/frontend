@@ -1,17 +1,27 @@
 import { Spacing } from '@tech-frontier/spacing';
 import { Text } from '@tech-frontier/ui-desktop';
-import { InitialRecruitList } from './components/InitialRecruitList';
-import { RecruitListClient } from './components/RecruitListClient';
+import { fetchRecruitList } from '@/actions/fetchRecruitList';
+import { LoadMore } from './LoadMore';
+import { RecruitItem, RecruitItemHeader } from './RecruitItem';
 
-export default function RecruitListPage() {
+export default async function RecruitListPage() {
+  const { data } = await fetchRecruitList({ pageNo: 1 });
   return (
     <main>
       <Spacing size={40}/>
       <Text rank="1">채용 공고 리스트</Text>
 
-      <RecruitListClient>
-        <InitialRecruitList />
-      </RecruitListClient>
+      <RecruitItemHeader />
+      {
+        data.map((x, i) =>
+          <RecruitItem
+            key={`${i}-${x.company}-${encodeURIComponent(x.url)}`}
+            data={x}
+          />,
+        )
+      }
+
+      <LoadMore />
     </main>
   );
 }
