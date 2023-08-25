@@ -2,7 +2,6 @@
 
 import { Spacing } from '@tech-frontier/spacing';
 import { Button, Text } from '@tech-frontier/ui-desktop';
-import { delay } from '@toss/utils';
 import { InputHTMLAttributes, useState } from 'react';
 import { request } from '@/utils/request/common';
 
@@ -53,8 +52,6 @@ export default function TestPage() {
                 password: pw,
               },
             });
-            await delay(500);
-
             window.location.href = '/';
           }}
         >로그인</Button>
