@@ -14,6 +14,7 @@
     "@tech-frontier/spacing": "^0.1.0",
     "@tech-frontier/ui-desktop": "^0.6.2",
     "@toss/impression-area": "^1.2.10",
+    "@toss/utils": "^1.4.4",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "next": "13.4.9",
