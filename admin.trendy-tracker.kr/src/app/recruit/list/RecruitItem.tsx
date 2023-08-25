@@ -1,6 +1,6 @@
 import Link from 'next/link';
+import { Recruit } from '@/models/recruit';
 import { css } from '@styled-system/css';
-import type { Recruit } from '../models/recruit';
 
 export function RecruitItem({ data }: { data: Recruit }) {
   return (
@@ -14,7 +14,7 @@ export function RecruitItem({ data }: { data: Recruit }) {
       <p className={css({ width: '40px' })}>{data.id}</p>
       <p className={css({ width: '80px' })}>{data.company}</p>
       <p className={css({ width: '80px' })}>{data.occupation}</p>
-      <p className={css({ width: '400px' })}>{data.techList.join(',')}</p>
+      <p className={css({ width: '400px' })}>{data.techList?.join(',')}</p>
       <Link
         href={data.url}
         target='_blank'

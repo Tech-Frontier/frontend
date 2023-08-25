@@ -132,3 +132,5 @@ dist
 
 # panda css
 styled-system
+
+.envrc
