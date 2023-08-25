@@ -1,7 +1,7 @@
 'use client';
 
 import { ImpressionArea } from '@toss/impression-area';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { fetchRecruitList } from '@/actions/fetchRecruitList';
 import { Recruit } from '@/models/recruit';
 import { RecruitItem } from './RecruitItem';
@@ -9,10 +9,6 @@ import { RecruitItem } from './RecruitItem';
 export function LoadMore() {
   const [pageNo, setPageNo] = useState(2);
   const [data, setData] = useState<Recruit[]>([]);
-
-  useEffect(() => {
-    console.log({ data });
-  }, [data]);
 
   return (
     <>
