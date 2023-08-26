@@ -1,9 +1,6 @@
 import { styled } from '@/utils/styled';
 import { css } from '@styled-system/css';
-import { AuthCheckClient } from './AuthCheckClient';
-import { AuthCheckServer } from './AuthCheckServer';
-import { AdminHeader } from './components/AdminHeader';
-import { Footer } from './components/Footer';
+import { AdminHeader, AuthCheckClient, Footer } from './components';
 import '@tech-frontier/ui-desktop/style.css';
 import './globals.css';
 
@@ -15,19 +12,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ko">
       <body>
-        <AdminHeader className={css({
-          height: '60px',
-        })} />
+        <AdminHeader className={css({ height: '60px' })} />
 
-        <Wrapper>
-          {children}
-        </Wrapper>
+        <Wrapper>{children}</Wrapper>
 
-        <Footer className={css({
-          height: '40px',
-        })}/>
+        <Footer className={css({ height: '40px' })}/>
+
         <AuthCheckClient />
-        <AuthCheckServer />
       </body>
     </html>
   );
