@@ -1,5 +1,15 @@
 @layer reset, base, tokens, recipes, utilities;
 
+@font-face {
+  font-family: "GyeonggiTitleM";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiTitleM.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   background-color: #000000eb;
+}
+
+* {
+  font-family: "GyeonggiTitleM";
 }
