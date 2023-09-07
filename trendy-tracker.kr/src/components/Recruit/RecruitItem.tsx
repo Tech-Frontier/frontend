@@ -1,6 +1,6 @@
+import { css } from '@/../styled-system/css';
 import { Tag, Text } from '@tech-frontier/ui-desktop';
 import Link from 'next/link';
-import { css } from '@/../styled-system/css';
 import type { RecruitItemData } from '@/app/page';
 
 export function RecruitItem({ recruit }: { recruit: RecruitItemData }) {
@@ -46,7 +46,7 @@ const itemTitleCss = css({
   '&:hover': {
     '& > *': {
       color: '#49A078 !important',
-      transition: 'color 0.4s ease-in-out',
+      transition: 'color 0.3s ease-in-out',
     },
   },
 
