@@ -2,6 +2,7 @@ import { css } from '@/../styled-system/css';
 import { Button } from '@tech-frontier/ui-desktop';
 import React, { ReactNode } from 'react';
 import Twemoji from '@/components/Twemoji';
+import { TextField } from './TextField';
 
 export function MainTitle({ children }:{ children: ReactNode }) {
   return (
@@ -10,8 +11,8 @@ export function MainTitle({ children }:{ children: ReactNode }) {
         <Twemoji emoji="🔔" width={48} height={48}/>
       </div>
       {children}
-      <div className={textfieldCss}>
-        <input className={inputCss} placeholder='이메일을 입력해주세요'/>
+      <div className={fieldCss}>
+        <TextField placeholder='이메일을 입력해주세요'/>
         <Button>알림 받기</Button>
       </div>
     </div>
@@ -29,24 +30,7 @@ const titleCss = css({
   },
 });
 
-const inputCss = css({
-  width: '250px',
-  appearance: 'none',
-  borderRadius: '8px',
-  backgroundColor: '#262626',
-  padding: '12px',
-  fontSize: '15px',
-  color: '#9CC5A1',
-  transition: 'box-shadow 0.2s ease-in-out',
-
-  '&:focus': {
-    outline: 'none',
-    boxShadow: 'inset 0px 0px 2px 1px #9CC5A1',
-    transition: 'box-shadow 0.2s ease-in-out',
-  },
-});
-
-const textfieldCss = css({
+const fieldCss = css({
   display: 'flex',
   alignItems: 'stretch',
 
