@@ -1,6 +1,6 @@
-import { css } from '@/../styled-system/css';
 import { Tag, Text } from '@tech-frontier/ui-desktop';
 import Link from 'next/link';
+import { css } from '@/../styled-system/css';
 import type { RecruitItemData } from '@/app/page';
 
 export function RecruitItem({ recruit }: { recruit: RecruitItemData }) {
