@@ -1,6 +1,6 @@
-import { Text } from '@tech-frontier/ui-desktop';
-import React, { ReactNode } from 'react';
 import { css } from '@/../styled-system/css';
+import { Text } from '@tech-frontier/ui-desktop';
+import { ReactNode } from 'react';
 import Twemoji from '@/components/Twemoji';
 
 export function RecruitSectionTitle({ children }: { children: ReactNode }) {

@@ -1,5 +1,3 @@
-'use client';
-
 import { Header } from '@tech-frontier/ui-desktop';
 import { ReactNode } from 'react';
 import { css } from '../../styled-system/css';
