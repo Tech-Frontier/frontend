@@ -1,7 +1,5 @@
 import { Text } from '@tech-frontier/ui-desktop';
-import { MainTitle } from '@/components/Recruit/MainTitle';
-import { RecruitItem } from '@/components/Recruit/RecruitItem';
-import { RecruitSectionTitle } from '@/components/Recruit/RecruitSectionTitle';
+import { MainTitle, RecruitItem, RecruitSectionTitle } from '@/components/Recruit';
 import { fetchRecruitList } from '@/utils/api/recruit';
 import { css } from '../../styled-system/css';
 
