@@ -3,7 +3,7 @@ export interface RequestContext {
 }
 
 export interface RequestOptions {
-  method?: 'GET' | 'POST';
+  method?: 'GET' | 'POST' | 'DELETE';
   pathname: string;
   contentType?: string;
   params?: Record<string, any>
@@ -55,7 +55,7 @@ export async function request(
         'Content-Type': contentType,
         ...additionalHeaders,
       },
-      body: method === 'POST' ? JSON.stringify(params) : undefined,
+      body: method !== 'GET' ? JSON.stringify(params) : undefined,
     });
 
   if (!response.ok) {

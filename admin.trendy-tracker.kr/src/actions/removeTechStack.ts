@@ -2,10 +2,10 @@
 
 import { requestTTAPI } from '@/utils/request';
 
-export async function createTechStack({ techName }: { techName: string }) {
+export async function removeTechStack({ techName }: { techName: string }) {
   return requestTTAPI<{ msg?: string; error?: string }>({
-    pathname: '/api/tech/stack/create',
-    method: 'POST',
+    pathname: '/api/tech/stack/delete',
+    method: 'DELETE',
     params: {
       tech: techName,
     },

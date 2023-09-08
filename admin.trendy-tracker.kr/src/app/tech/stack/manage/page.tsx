@@ -24,7 +24,7 @@ export default async function TechStackManagePage() {
         data.map((x, i) =>
           <TechStackListItem
             key={`${i}-${encodeURIComponent(x.name)}`}
-            tech={x.name}
+            techName={x.name}
           />,
         )
       }

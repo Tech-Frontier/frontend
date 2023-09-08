@@ -21,14 +21,14 @@ export async function GET(req: NextRequest) {
     const res = await fetch(`${BASE_URL}${pathname}${search}`, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `bearer ${TTAPI_TOKEN}`,
+        'Authorization': `Bearer ${TTAPI_TOKEN}`,
       },
     });
 
     const data = await res.json();
     return NextResponse.json(data);
   } catch (error:any) {
-    console.error(error.message);
+    console.error(`Server Error(${BASE_URL}): ${error.message}`);
 
     if (error.code != null) {
       return NextResponse.json({ message: error.message }, { status: error.code });
@@ -49,20 +49,58 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Internal Server Error[KEY]' }, { status: 500 });
     }
 
+    const body = await req.json();
+
     const res = await fetch(`${BASE_URL}${pathname}`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `bearer ${TTAPI_TOKEN}`,
+        'Content-type': 'application/json; charset=UTF-8',
+        'Authorization': `Bearer ${TTAPI_TOKEN}`,
       },
-      body: await req.json(),
+      body: JSON.stringify(body),
     });
 
     const data = await res.json();
 
     return NextResponse.json(data);
   } catch (error:any) {
-    console.error(error.message);
+    console.error(`error from ${BASE_URL}: ${error.message}`);
+
+    if (error.code != null) {
+      return NextResponse.json({ message: error.message }, { status: error.code });
+    }
+
+    return NextResponse.json({ message: error.message }, { status: 500 });
+  }
+}
+
+export async function DELETE(req: NextRequest) {
+  try {
+    requireAuth(req);
+    const url = new URL(req.url);
+
+    const pathname = url.pathname.replace('/ttapi', '');
+
+    if (TTAPI_TOKEN === '') {
+      return NextResponse.json({ error: 'Internal Server Error[KEY]' }, { status: 500 });
+    }
+
+    const body = await req.json();
+
+    const res = await fetch(`${BASE_URL}${pathname}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+        'Authorization': `Bearer ${TTAPI_TOKEN}`,
+      },
+      body: JSON.stringify(body),
+    });
+
+    const data = await res.json();
+
+    return NextResponse.json(data);
+  } catch (error:any) {
+    console.error(`error from ${BASE_URL}: ${error.message}`);
 
     if (error.code != null) {
       return NextResponse.json({ message: error.message }, { status: error.code });

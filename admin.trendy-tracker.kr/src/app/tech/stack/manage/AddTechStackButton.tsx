@@ -1,8 +1,12 @@
 'use client';
 
 import { Button } from '@tech-frontier/ui-desktop';
+import { delay } from '@toss/utils';
+import { useRouter } from 'next/navigation';
+import { createTechStack } from '@/actions/createTechStack';
 
 export function AddTechStackButton() {
+  const router = useRouter();
   return (
     <Button
       size="small"
@@ -14,9 +18,13 @@ export function AddTechStackButton() {
         }
 
         try {
-          alert('기능 추가 예정입니다.');
-          // await createTachStack({ techName });
-          return;
+          const response = await createTechStack({ techName });
+
+          await delay(300);
+
+          alert([response?.msg, `techName: ${techName}`].join('\n'));
+
+          router.refresh();
         } catch (error: any) {
           console.log(error);
           alert(error.message);
