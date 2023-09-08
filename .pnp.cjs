@@ -1913,6 +1913,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:0.10.5", {\
+          "packageLocation": "./.yarn/cache/@tech-frontier-ui-desktop-npm-0.10.5-d743c9dc1a-c155ac59d5.zip/node_modules/@tech-frontier/ui-desktop/",\
+          "packageDependencies": [\
+            ["@tech-frontier/ui-desktop", "npm:0.10.5"],\
+            ["eslint", "npm:8.44.0"],\
+            ["eslint-config-next", "virtual:ab6dc7969d89de9fb6f03de2284ebcc00edba2663382165d01834f854ee6ef608472b53f82d143c51c1a5032c634029fc4f235b6ee27fa87d5c0b2838cf66906#npm:13.4.9"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:10a0e2d87ed1a685075a3ee10616dd6960201570491c7951d53f67aba6472a5226dd1f2b84a3107251f780e061422c5be760b48d43568bec74a2b7094ec270a9#npm:18.2.0"],\
+            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["@tootallnate/once", [\
@@ -3416,7 +3428,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@divops-packages/node-utils", "npm:0.1.2"],\
             ["@pandacss/dev", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:0.6.0"],\
             ["@tech-frontier/spacing", "npm:0.1.0"],\
-            ["@tech-frontier/ui-desktop", "npm:0.10.4"],\
+            ["@tech-frontier/ui-desktop", "npm:0.10.5"],\
             ["@toss/impression-area", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:1.2.10"],\
             ["@toss/utils", "npm:1.4.4"],\
             ["@types/eslint", "npm:8.44.0"],\
