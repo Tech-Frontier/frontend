@@ -6,7 +6,8 @@ function getBaseURL() {
     if (process.env.LOCAL === 'true') {
       return 'http://localhost:3000';
     }
-    return process.env.VERCEL_URL;
+
+    return `https://${process.env.VERCEL_URL}`;
   }
 
   return window.location.origin;
