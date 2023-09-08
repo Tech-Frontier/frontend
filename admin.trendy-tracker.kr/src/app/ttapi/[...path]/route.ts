@@ -16,6 +16,8 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: 'Internal Server Error[KEY]' }, { status: 500 });
     }
 
+    console.log(`[API] ${BASE_URL}${pathname}${search}`);
+
     const res = await fetch(`${BASE_URL}${pathname}${search}`, {
       headers: {
         'Content-Type': 'application/json',

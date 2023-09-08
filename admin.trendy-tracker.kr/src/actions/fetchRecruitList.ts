@@ -15,10 +15,15 @@ export async function fetchRecruitList({ pageNo = 1, pageSize = 10 }: FetchRecru
   const { data } = await requestTTAPI<{ data: { recruitList:Recruit[] } }>({
     pathname: '/api/recruit/list',
     additionalHeaders: { ...(cookie != null ? { cookie } : {}) },
+    params: {
+      pageNo,
+      pageSize,
+    },
   });
 
   return {
-    data: data.recruitList.slice( (pageNo - 1) * pageSize, pageNo * pageSize),
-    isEnd: pageNo * pageSize >= data.recruitList.length,
+    // FIXME: 빈배열로 내려오도록 고쳐지면 ? 뺴기 (https://techfrontierhq.slack.com/archives/C05BRRQQBM4/p1694172793044849)
+    data: data?.recruitList ?? [],
+    isEnd: pageNo * pageSize >= data?.recruitList.length,
   };
 }
