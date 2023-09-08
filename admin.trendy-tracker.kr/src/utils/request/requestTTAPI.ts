@@ -1,3 +1,4 @@
+import { headers } from 'next/headers';
 import { RequestOptions, request } from './common';
 
 function getBaseURL() {
@@ -12,6 +13,9 @@ function getBaseURL() {
 }
 
 export async function requestTTAPI<T>(options: RequestOptions): Promise<T> {
+  const headersList = headers();
+  const cookie = headersList.get('Cookie');
+
   const baseURL = `${getBaseURL()}/ttapi`;
 
   return request({
@@ -19,6 +23,7 @@ export async function requestTTAPI<T>(options: RequestOptions): Promise<T> {
     additionalHeaders: {
       // NOTE: 권한 체크가 필요하여 캐시하지 않음
       cache: 'no-store',
+      ...(cookie != null ? { cookie } : {}),
       ...options.additionalHeaders,
     },
   }, { baseURL });

@@ -1,6 +1,5 @@
 'use server';
 
-import { headers } from 'next/headers';
 import { Recruit } from '@/models/recruit';
 import { requestTTAPI } from '@/utils/request';
 
@@ -10,11 +9,8 @@ interface FetchRecruitListOptions {
 }
 
 export async function fetchRecruitList({ pageNo = 1, pageSize = 10 }: FetchRecruitListOptions = {}) {
-  const headersList = headers();
-  const cookie = headersList.get('Cookie');
   const { data } = await requestTTAPI<{ data: { recruitList:Recruit[] } }>({
     pathname: '/api/recruit/list',
-    additionalHeaders: { ...(cookie != null ? { cookie } : {}) },
     params: {
       pageNo,
       pageSize,
