@@ -66,11 +66,6 @@ export async function request(
       //
     }
 
-    console.log({
-      url,
-      options,
-    });
-
     throw new Error(`[Error] ${method} ${pathname} (${response.statusText})`);
   }
 

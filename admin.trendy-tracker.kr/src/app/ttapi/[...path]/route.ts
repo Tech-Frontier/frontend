@@ -59,17 +59,7 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify(body),
     };
 
-    console.log({
-      url,
-      options,
-    });
-
     const res = await fetch(url, options);
-
-    console.log({
-      url,
-      options,
-    });
 
     const data = await res.json();
 
