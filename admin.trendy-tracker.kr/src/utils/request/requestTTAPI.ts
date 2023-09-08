@@ -6,7 +6,7 @@ function getBaseURL() {
     if (process.env.LOCAL === 'true') {
       return 'http://localhost:3000';
     }
-    return 'https://admin.trendy-tracker.kr';
+    return process.env.VERCEL_URL;
   }
 
   return window.location.origin;
