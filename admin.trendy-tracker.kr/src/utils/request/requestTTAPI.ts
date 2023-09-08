@@ -12,7 +12,6 @@ function getBaseURL() {
 }
 
 export async function requestTTAPI<T>(options: RequestOptions): Promise<T> {
-  console.log(`[requestTTAPI] ${options.method ?? 'GET'} ${getBaseURL()}${options.pathname}`);
   const baseURL = `${getBaseURL()}/ttapi`;
 
   return request({

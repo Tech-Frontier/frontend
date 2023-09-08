@@ -16,13 +16,13 @@ export async function fetchTechStackList({ pageNo = 1, pageSize = 10 }: FetchTec
   try {
     const headersList = headers();
     const cookie = headersList.get('Cookie');
-    const { data } = await requestTTAPI<{ data: TechStack['name'][] }>({
+    const { data } = await requestTTAPI<{ data: TechStack[] }>({
       pathname: '/api/tech/stack/list',
       additionalHeaders: { ...(cookie != null ? { cookie } : {}) },
     });
 
     return {
-      data: data.map(x => ({ name: x })).slice( (pageNo - 1) * pageSize, pageNo * pageSize),
+      data: data.slice( (pageNo - 1) * pageSize, pageNo * pageSize),
       isEnd: pageNo * pageSize >= data.length,
     };
   } catch (error: any) {
