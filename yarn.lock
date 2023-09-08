@@ -1498,7 +1498,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tech-frontier/ui-desktop@npm:^0.10.3, @tech-frontier/ui-desktop@npm:^0.10.4":
+"@tech-frontier/ui-desktop@npm:^0.10.3":
   version: 0.10.4
   resolution: "@tech-frontier/ui-desktop@npm:0.10.4"
   dependencies:
@@ -1508,6 +1508,19 @@ __metadata:
     react-dom: ^18
     typescript: 5.1.6
   checksum: e580f35d7ba43a2cce3a6d39d26b3272b236547c68400d9c49dcf9f888d6363a9e4a1148b140df5a11dc6ca37a4ae523911ce960d6d1a4a4f1cbc8c978969a63
+  languageName: node
+  linkType: hard
+
+"@tech-frontier/ui-desktop@npm:^0.10.5":
+  version: 0.10.5
+  resolution: "@tech-frontier/ui-desktop@npm:0.10.5"
+  dependencies:
+    eslint: 8.44.0
+    eslint-config-next: 13.4.9
+    react: ^18
+    react-dom: ^18
+    typescript: 5.1.6
+  checksum: c155ac59d53be01dd1a139636d905151dd2ec4ac5cf27910cd8f08a56bfc4bb5a7f8fcddee917c8308553b995e80dc43048ae3b53d42ac87ceac0a6aadd426b1
   languageName: node
   linkType: hard
 
@@ -2732,7 +2745,7 @@ __metadata:
     "@divops-packages/node-utils": ^0.1.2
     "@pandacss/dev": ^0.6.0
     "@tech-frontier/spacing": ^0.1.0
-    "@tech-frontier/ui-desktop": ^0.10.4
+    "@tech-frontier/ui-desktop": ^0.10.5
     "@toss/impression-area": ^1.2.10
     "@toss/utils": ^1.4.4
     "@types/eslint": ^8
