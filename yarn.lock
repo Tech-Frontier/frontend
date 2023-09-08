@@ -1389,7 +1389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tech-frontier/shared-button@workspace:^, @tech-frontier/shared-button@workspace:shared/button":
+"@tech-frontier/shared-button@workspace:shared/button":
   version: 0.0.0-use.local
   resolution: "@tech-frontier/shared-button@workspace:shared/button"
   dependencies:
@@ -1437,7 +1437,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tech-frontier/shared-tag@workspace:^, @tech-frontier/shared-tag@workspace:shared/tag":
+"@tech-frontier/shared-tag@workspace:shared/tag":
   version: 0.0.0-use.local
   resolution: "@tech-frontier/shared-tag@workspace:shared/tag"
   dependencies:
@@ -1461,7 +1461,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@tech-frontier/shared-text@workspace:^, @tech-frontier/shared-text@workspace:shared/text":
+"@tech-frontier/shared-text@workspace:shared/text":
   version: 0.0.0-use.local
   resolution: "@tech-frontier/shared-text@workspace:shared/text"
   dependencies:
@@ -1495,6 +1495,19 @@ __metadata:
     react-dom: ^18
     typescript: 5.1.6
   checksum: a04228e333a514de9f78f5efb433a8ca9cf3c6a19e8f4ab742f65363a1f84ab91b3fb788c71b8b0dde7ac7e55aeceb87678b7bc5c46ea820e0dbd68844649568
+  languageName: node
+  linkType: hard
+
+"@tech-frontier/ui-desktop@npm:^0.10.3":
+  version: 0.10.3
+  resolution: "@tech-frontier/ui-desktop@npm:0.10.3"
+  dependencies:
+    eslint: 8.44.0
+    eslint-config-next: 13.4.9
+    react: ^18
+    react-dom: ^18
+    typescript: 5.1.6
+  checksum: c00e5cbefe2832520e6045da0b17644cd4edad2e134a96ec2854de4fb0427b80c7cb5ea59b8b0f42c8bc8c7aa5fc0723818a159c03dfe8e33a390ff1f6d281ff
   languageName: node
   linkType: hard
 
@@ -4850,6 +4863,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fs-extra@npm:^8.0.1":
+  version: 8.1.0
+  resolution: "fs-extra@npm:8.1.0"
+  dependencies:
+    graceful-fs: ^4.2.0
+    jsonfile: ^4.0.0
+    universalify: ^0.1.0
+  checksum: bf44f0e6cea59d5ce071bba4c43ca76d216f89e402dc6285c128abc0902e9b8525135aa808adad72c9d5d218e9f4bcc63962815529ff2f684ad532172a284880
+  languageName: node
+  linkType: hard
+
 "fs-minipass@npm:^2.0.0":
   version: 2.1.0
   resolution: "fs-minipass@npm:2.1.0"
@@ -5896,6 +5920,31 @@ __metadata:
   version: 3.2.0
   resolution: "jsonc-parser@npm:3.2.0"
   checksum: 946dd9a5f326b745aa326d48a7257e3f4a4b62c5e98ec8e49fa2bdd8d96cef7e6febf1399f5c7016114fd1f68a1c62c6138826d5d90bc650448e3cf0951c53c7
+  languageName: node
+  linkType: hard
+
+"jsonfile@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "jsonfile@npm:4.0.0"
+  dependencies:
+    graceful-fs: ^4.1.6
+  dependenciesMeta:
+    graceful-fs:
+      optional: true
+  checksum: 6447d6224f0d31623eef9b51185af03ac328a7553efcee30fa423d98a9e276ca08db87d71e17f2310b0263fd3ffa6c2a90a6308367f661dc21580f9469897c9e
+  languageName: node
+  linkType: hard
+
+"jsonfile@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "jsonfile@npm:5.0.0"
+  dependencies:
+    graceful-fs: ^4.1.6
+    universalify: ^0.1.2
+  dependenciesMeta:
+    graceful-fs:
+      optional: true
+  checksum: e0ecff572dba34153a66e3a3bc5c6cb01a2c1d2cf4a2c19b6728dcfcab39d94be9cca4a0fc86a17ff2c815f2aeb43768ac75545780dbea4009433fdc32aa14d1
   languageName: node
   linkType: hard
 
@@ -8718,9 +8767,7 @@ __metadata:
   resolution: "trendy-tracker.kr@workspace:trendy-tracker.kr"
   dependencies:
     "@pandacss/dev": ^0.6.0
-    "@tech-frontier/shared-button": "workspace:^"
-    "@tech-frontier/shared-tag": "workspace:^"
-    "@tech-frontier/shared-text": "workspace:^"
+    "@tech-frontier/ui-desktop": ^0.10.3
     "@types/eslint": ^8
     "@types/node": 20.4.1
     "@types/react": 18.2.14
@@ -8738,6 +8785,7 @@ __metadata:
     next: 13.4.9
     react: 18.2.0
     react-dom: 18.2.0
+    twemoji: ^14.0.2
     typescript: 5.1.6
   languageName: unknown
   linkType: soft
@@ -8852,6 +8900,25 @@ __metadata:
   peerDependencies:
     typescript: ">=2.8.0 || >= 3.2.0-dev || >= 3.3.0-dev || >= 3.4.0-dev || >= 3.5.0-dev || >= 3.6.0-dev || >= 3.6.0-beta || >= 3.7.0-dev || >= 3.7.0-beta"
   checksum: 1843f4c1b2e0f975e08c4c21caa4af4f7f65a12ac1b81b3b8489366826259323feb3fc7a243123453d2d1a02314205a7634e048d4a8009921da19f99755cdc48
+  languageName: node
+  linkType: hard
+
+"twemoji-parser@npm:14.0.0":
+  version: 14.0.0
+  resolution: "twemoji-parser@npm:14.0.0"
+  checksum: 8eede69cf71f94735de7b6fddf5dfbfe3cb2e01baefc3201360984ccc97cfc659f206c8f73bd1405a2282779af3b79a8c9bed3864c672e15e2dc6f8ce4810452
+  languageName: node
+  linkType: hard
+
+"twemoji@npm:^14.0.2":
+  version: 14.0.2
+  resolution: "twemoji@npm:14.0.2"
+  dependencies:
+    fs-extra: ^8.0.1
+    jsonfile: ^5.0.0
+    twemoji-parser: 14.0.0
+    universalify: ^0.1.2
+  checksum: 686a356a7af3cf15f7894568bfcdfafcea0cd45473b3f8c59d6ca95e549695f1222845d1a8c39ffa3bc4057e9d59e41ab83e4ce3cbcd68823ff50d57e3ff58da
   languageName: node
   linkType: hard
 
@@ -9062,6 +9129,13 @@ __metadata:
     unist-util-is: ^5.0.0
     unist-util-visit-parents: ^5.1.1
   checksum: 95a34e3f7b5b2d4b68fd722b6229972099eb97b6df18913eda44a5c11df8b1e27efe7206dd7b88c4ed244a48c474a5b2e2629ab79558ff9eb936840295549cee
+  languageName: node
+  linkType: hard
+
+"universalify@npm:^0.1.0, universalify@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "universalify@npm:0.1.2"
+  checksum: 40cdc60f6e61070fe658ca36016a8f4ec216b29bf04a55dce14e3710cc84c7448538ef4dad3728d0bfe29975ccd7bfb5f414c45e7b78883567fb31b246f02dff
   languageName: node
   linkType: hard
 

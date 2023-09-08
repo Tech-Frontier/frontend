@@ -1,95 +1,41 @@
-import Image from 'next/image';
-import styles from './page.module.css';
+import { Text } from '@tech-frontier/ui-desktop';
+import { MainTitle, RecruitItem, RecruitSectionTitle } from '@/components/Recruit';
+import { fetchRecruitList } from '@/utils/api/recruit';
+import { css } from '../../styled-system/css';
 
-export default function Home() {
+export interface RecruitItemData {
+  id: number;
+  company: string;
+  occupation: string;
+  url: string;
+  createdTime: Date;
+  techList: string[];
+}
+export default async function Recruit() {
+  const { data } = await fetchRecruitList();
+  const { recruitList, totalCount } = data;
+
+  // NOTE: https://gist.github.com/chibicode/fe195d792270910226c928b69a468206
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div className={wrapperCss}>
+      <MainTitle>
+        <Text as="h1" rank='1' fontWeight='800' color="#DEC9E9">새로운 공고가 올라오면 알려드릴게요</Text>
+      </MainTitle>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <RecruitSectionTitle>
+        <Text rank="4" color="#FFFFFF">{totalCount}</Text>
+        <Text rank="4" color="#9CC5A1">개의 채용공고가 있어요</Text>
+      </RecruitSectionTitle>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <ul>
+        {recruitList.map((recruit: RecruitItemData) => (
+          <RecruitItem recruit={recruit} key={recruit.id} />
+        ))}
+      </ul>
+    </div>
   );
 }
+
+const wrapperCss = css({
+  margin: '0 50px',
+});

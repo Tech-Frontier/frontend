@@ -10,14 +10,13 @@
     "prepare": "panda codegen"
   },
   "dependencies": {
-    "@tech-frontier/shared-button": "workspace:^",
-    "@tech-frontier/shared-tag": "workspace:^",
-    "@tech-frontier/shared-text": "workspace:^",
+    "@tech-frontier/ui-desktop": "^0.10.3",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
     "next": "13.4.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "twemoji": "^14.0.2",
     "typescript": "5.1.6"
   },
   "devDependencies": {

@@ -1902,6 +1902,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@tech-frontier/ui-desktop", [\
+        ["npm:0.10.3", {\
+          "packageLocation": "./.yarn/cache/@tech-frontier-ui-desktop-npm-0.10.3-94b9b30567-c00e5cbefe.zip/node_modules/@tech-frontier/ui-desktop/",\
+          "packageDependencies": [\
+            ["@tech-frontier/ui-desktop", "npm:0.10.3"],\
+            ["eslint", "npm:8.44.0"],\
+            ["eslint-config-next", "virtual:ab6dc7969d89de9fb6f03de2284ebcc00edba2663382165d01834f854ee6ef608472b53f82d143c51c1a5032c634029fc4f235b6ee27fa87d5c0b2838cf66906#npm:13.4.9"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:10a0e2d87ed1a685075a3ee10616dd6960201570491c7951d53f67aba6472a5226dd1f2b84a3107251f780e061422c5be760b48d43568bec74a2b7094ec270a9#npm:18.2.0"],\
+            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:0.6.2", {\
           "packageLocation": "./.yarn/cache/@tech-frontier-ui-desktop-npm-0.6.2-469829a767-a9061eba52.zip/node_modules/@tech-frontier/ui-desktop/",\
           "packageDependencies": [\
@@ -6156,6 +6168,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["universalify", "npm:2.0.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:8.1.0", {\
+          "packageLocation": "./.yarn/cache/fs-extra-npm-8.1.0-197473387f-bf44f0e6ce.zip/node_modules/fs-extra/",\
+          "packageDependencies": [\
+            ["fs-extra", "npm:8.1.0"],\
+            ["graceful-fs", "npm:4.2.11"],\
+            ["jsonfile", "npm:4.0.0"],\
+            ["universalify", "npm:0.1.2"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["fs-minipass", [\
@@ -7318,6 +7340,23 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["jsonfile", [\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/jsonfile-npm-4.0.0-10ce3aea15-6447d6224f.zip/node_modules/jsonfile/",\
+          "packageDependencies": [\
+            ["jsonfile", "npm:4.0.0"],\
+            ["graceful-fs", "npm:4.2.11"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:5.0.0", {\
+          "packageLocation": "./.yarn/cache/jsonfile-npm-5.0.0-be63f5e054-e0ecff572d.zip/node_modules/jsonfile/",\
+          "packageDependencies": [\
+            ["jsonfile", "npm:5.0.0"],\
+            ["graceful-fs", "npm:4.2.11"],\
+            ["universalify", "npm:0.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:6.1.0", {\
           "packageLocation": "./.yarn/cache/jsonfile-npm-6.1.0-20a4796cee-7af3b8e1ac.zip/node_modules/jsonfile/",\
           "packageDependencies": [\
@@ -10574,9 +10613,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["trendy-tracker.kr", "workspace:trendy-tracker.kr"],\
             ["@pandacss/dev", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:0.6.0"],\
-            ["@tech-frontier/shared-button", "workspace:shared/button"],\
-            ["@tech-frontier/shared-tag", "workspace:shared/tag"],\
-            ["@tech-frontier/shared-text", "workspace:shared/text"],\
+            ["@tech-frontier/ui-desktop", "npm:0.10.3"],\
             ["@types/eslint", "npm:8.44.0"],\
             ["@types/node", "npm:20.4.1"],\
             ["@types/react", "npm:18.2.14"],\
@@ -10594,6 +10631,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:13.4.9"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:18.2.0"],\
+            ["twemoji", "npm:14.0.2"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
           ],\
           "linkType": "SOFT"\
@@ -10764,6 +10802,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packagePeers": [\
             "@types/typescript",\
             "typescript"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["twemoji", [\
+        ["npm:14.0.2", {\
+          "packageLocation": "./.yarn/cache/twemoji-npm-14.0.2-bd5648dce6-686a356a7a.zip/node_modules/twemoji/",\
+          "packageDependencies": [\
+            ["twemoji", "npm:14.0.2"],\
+            ["fs-extra", "npm:8.1.0"],\
+            ["jsonfile", "npm:5.0.0"],\
+            ["twemoji-parser", "npm:14.0.0"],\
+            ["universalify", "npm:0.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["twemoji-parser", [\
+        ["npm:14.0.0", {\
+          "packageLocation": "./.yarn/cache/twemoji-parser-npm-14.0.0-9cf535117a-8eede69cf7.zip/node_modules/twemoji-parser/",\
+          "packageDependencies": [\
+            ["twemoji-parser", "npm:14.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10990,6 +11050,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["universalify", [\
+        ["npm:0.1.2", {\
+          "packageLocation": "./.yarn/cache/universalify-npm-0.1.2-9b22d31d2d-40cdc60f6e.zip/node_modules/universalify/",\
+          "packageDependencies": [\
+            ["universalify", "npm:0.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:2.0.0", {\
           "packageLocation": "./.yarn/cache/universalify-npm-2.0.0-03b8b418a8-2406a4edf4.zip/node_modules/universalify/",\
           "packageDependencies": [\
