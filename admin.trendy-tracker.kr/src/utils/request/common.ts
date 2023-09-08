@@ -3,7 +3,7 @@ export interface RequestContext {
 }
 
 export interface RequestOptions {
-  method?: 'GET' | 'POST';
+  method?: 'GET' | 'POST' | 'DELETE';
   pathname: string;
   contentType?: string;
   params?: Record<string, any>
@@ -47,18 +47,25 @@ export async function request(
 
   console.log(`${method} ${baseURL}${pathname}${params != null && method === 'GET' ? `?${convertToQueryString(params)}` : ''}`);
 
-  const response = await fetch(
-    `${baseURL}${pathname}${params != null && method === 'GET' ? `?${convertToQueryString(params)}` : ''}`
-    , {
-      method,
-      headers: {
-        'Content-Type': contentType,
-        ...additionalHeaders,
-      },
-      body: method === 'POST' ? JSON.stringify(params) : undefined,
-    });
+  const url = `${baseURL}${pathname}${params != null && method === 'GET' ? `?${convertToQueryString(params)}` : ''}`;
+  const options = {
+    method,
+    headers: {
+      'Content-Type': contentType,
+      ...additionalHeaders,
+    },
+    body: method !== 'GET' ? JSON.stringify(params) : undefined,
+  };
+
+  const response = await fetch(url, options);
 
   if (!response.ok) {
+    try {
+      console.log(`error: ${await response.text()}`);
+    } catch {
+      //
+    }
+
     throw new Error(`[Error] ${method} ${pathname} (${response.statusText})`);
   }
 

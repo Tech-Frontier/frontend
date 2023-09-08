@@ -1,9 +1,14 @@
 'use client';
 
 import { Button } from '@tech-frontier/ui-desktop';
+import { delay } from '@toss/utils';
+import { useRouter } from 'next/navigation';
+import { removeTechStack } from '@/actions/removeTechStack';
 import { css } from '@styled-system/css';
 
-export function TechStackListItem({ tech }: { tech: string }) {
+export function TechStackListItem({ techName }: { techName: string }) {
+  const router = useRouter();
+
   return (
     <li className={css({
       display: 'flex',
@@ -12,12 +17,18 @@ export function TechStackListItem({ tech }: { tech: string }) {
       borderBottom: '1px solid',
       minHeight: '60px',
     })}>
-      <p className={css({ width: '200px' })}>{tech}</p>
+      <p className={css({ width: '200px' })}>{techName}</p>
       <Button
         size="small"
         className={css({ width: '100px' })}
-        onClick={() => {
-          confirm('기능 추가 예정입니다.');
+        onClick={async () => {
+          const response = await removeTechStack({ techName });
+
+          await delay(300);
+
+          alert([response?.msg ?? response?.error, `techName: ${techName}`].join('\n'));
+
+          router.refresh();
         }}
       >비활성화</Button>
     </li>
