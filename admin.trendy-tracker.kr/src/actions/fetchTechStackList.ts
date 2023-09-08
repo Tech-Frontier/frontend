@@ -1,6 +1,5 @@
 'use server';
 
-import { headers } from 'next/headers';
 import { requestTTAPI } from '@/utils/request';
 
 export interface TechStack {
@@ -14,11 +13,8 @@ interface FetchTechListOptions {
 
 export async function fetchTechStackList({ pageNo = 1, pageSize = 10 }: FetchTechListOptions) {
   try {
-    const headersList = headers();
-    const cookie = headersList.get('Cookie');
     const { data } = await requestTTAPI<{ data: TechStack[] }>({
       pathname: '/api/tech/stack/list',
-      additionalHeaders: { ...(cookie != null ? { cookie } : {}) },
     });
 
     return {

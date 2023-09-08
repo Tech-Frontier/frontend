@@ -8,8 +8,6 @@ import { MENUS } from '../constants';
 export function AdminHeader({ className }: { className?: string }) {
   return (
     <Header className={cx(css({
-      position: 'sticky',
-      top: '0px',
       background: '#f6f5f4',
     }), className)}>
       <Nav>
