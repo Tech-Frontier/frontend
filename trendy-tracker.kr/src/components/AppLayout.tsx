@@ -10,9 +10,7 @@ export function AppLayout({ children }: { children: ReactNode }) {
       <Header>
         <Header.Logo src={HEADER_LOGO_SRC} />
       </Header>
-      <main className={layoutCss}>
-        {children}
-      </main>
+      <main className={layoutCss}>{children}</main>
     </>
   );
 }
