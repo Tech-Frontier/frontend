@@ -1498,19 +1498,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tech-frontier/ui-desktop@npm:^0.10.3":
-  version: 0.10.4
-  resolution: "@tech-frontier/ui-desktop@npm:0.10.4"
-  dependencies:
-    eslint: 8.44.0
-    eslint-config-next: 13.4.9
-    react: ^18
-    react-dom: ^18
-    typescript: 5.1.6
-  checksum: e580f35d7ba43a2cce3a6d39d26b3272b236547c68400d9c49dcf9f888d6363a9e4a1148b140df5a11dc6ca37a4ae523911ce960d6d1a4a4f1cbc8c978969a63
-  languageName: node
-  linkType: hard
-
 "@tech-frontier/ui-desktop@npm:^0.10.5":
   version: 0.10.5
   resolution: "@tech-frontier/ui-desktop@npm:0.10.5"
@@ -7810,6 +7797,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.46.1":
+  version: 7.46.1
+  resolution: "react-hook-form@npm:7.46.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 9c11ba454ce5b2a16e7499f2ca710e0c0cff227f39689b8e7985902f27f99bfc7a2c49f145ef228528764cf8286bf6101fc8a0f5094ce652eb31cab1684518d1
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -8767,7 +8763,7 @@ __metadata:
   resolution: "trendy-tracker.kr@workspace:trendy-tracker.kr"
   dependencies:
     "@pandacss/dev": ^0.6.0
-    "@tech-frontier/ui-desktop": ^0.10.3
+    "@tech-frontier/ui-desktop": ^0.10.5
     "@types/eslint": ^8
     "@types/node": 20.4.1
     "@types/react": 18.2.14
@@ -8785,6 +8781,7 @@ __metadata:
     next: 13.4.9
     react: 18.2.0
     react-dom: 18.2.0
+    react-hook-form: ^7.46.1
     twemoji: ^14.0.2
     typescript: 5.1.6
   languageName: unknown
