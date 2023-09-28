@@ -6,5 +6,9 @@ export const fetchRecruitList = async () => {
     },
   });
 
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+
   return response.json();
 };
