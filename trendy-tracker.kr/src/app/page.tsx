@@ -1,21 +1,19 @@
 import { Text } from '@tech-frontier/ui-desktop';
-import { MainTitle, RecruitItem, RecruitSectionTitle } from '@/components/Recruit';
+import { MainTitle, RecruitSectionTitle, RecruitList } from '@/components/Recruit';
 import { NotiField } from '@/components/Recruit/NotiField';
-import { fetchRecruitList } from '@/utils/api/recruit';
 import { css } from '../../styled-system/css';
 
 export interface RecruitItemData {
   id: number;
+  title: string;
   company: string;
   occupation: string;
   url: string;
   createdTime: Date;
   techList: string[];
 }
-export default async function Recruit() {
-  const { data } = await fetchRecruitList();
-  const { recruitList, totalCount } = data;
 
+export default function Recruit() {
   // NOTE: https://gist.github.com/chibicode/fe195d792270910226c928b69a468206
   return (
     <div className={wrapperCss}>
@@ -31,15 +29,11 @@ export default async function Recruit() {
 
       <RecruitSectionTitle>
         <Text rank="4" color="#9CC5A1">
-          <span style={{ color: '#FFFFFF' }}>{totalCount}</span> 개의 채용공고가 있어요
+          {/* <span style={{ color: '#FFFFFF' }}>{totalCount}</span> 개의 채용공고가 있어요 */}
         </Text>
       </RecruitSectionTitle>
 
-      <ul>
-        {recruitList.map((recruit: RecruitItemData) => (
-          <RecruitItem recruit={recruit} key={recruit.id} />
-        ))}
-      </ul>
+      <RecruitList />
     </div>
   );
 }
