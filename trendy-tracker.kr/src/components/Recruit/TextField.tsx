@@ -1,12 +1,18 @@
+import { css, cx } from '@/../styled-system/css';
 import { InputHTMLAttributes } from 'react';
-import { css } from '@/../styled-system/css';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
-type TextFieldProps = InputHTMLAttributes<HTMLInputElement>;
+interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
+  error?: boolean;
+  register?: UseFormRegisterReturn;
+}
 
 // TODO: ui-desktop package에 TextField 컴포넌트 구현
 export function TextField(props: TextFieldProps) {
+  const { error = false, className: classNameFromProp, register } = props;
+
   return (
-    <input className={inputCss} {...props} />
+    <input className={cx(inputCss, error ? inputErrorCss : undefined, classNameFromProp)} {...register} {...props} />
   );
 }
 
@@ -17,7 +23,7 @@ const inputCss = css({
   backgroundColor: '#262626',
   padding: '12px',
   fontSize: '15px',
-  color: '#9CC5A1',
+  color: '#DCE1DE',
   transition: 'box-shadow 0.2s ease-in-out',
 
   '&:focus': {
@@ -25,4 +31,10 @@ const inputCss = css({
     boxShadow: 'inset 0px 0px 2px 1px #9CC5A1',
     transition: 'box-shadow 0.2s ease-in-out',
   },
+});
+
+const inputErrorCss = css({
+  boxShadow: 'inset 0px 0px 2px 1px #FF0000',
+  transition: 'box-shadow 0.2s ease-in-out',
+  animation: 'wiggle 0.2s ease-in-out',
 });
