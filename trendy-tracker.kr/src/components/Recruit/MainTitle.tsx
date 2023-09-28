@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import Twemoji from '@/components/Twemoji';
 import { css } from '@/../styled-system/css';
+import Twemoji from '@/components/Twemoji';
 
 export function MainTitle({ emoji, children }: { emoji: string; children: ReactNode }) {
   return (
