@@ -109,23 +109,23 @@ export function NotiField() {
         </Button>
         {notiErrors.email && <Text className={errorMessageCss} rank='6'>{notiErrors.email.message}</Text>}
       </div>
-      <div>
-      {submitted && (
-        <>
-          <TextField
-            placeholder="인증번호를 입력해주세요"
-            register={authRegister('authCode', {
-              validate: {
-                empty: (value) => value !== '' || '인증번호를 입력해주세요',
-              },
-            })}
-          />
-          <Button onClick={authHandleSubmit(onAuthCodeSubmit, onAuthCodeErrors)}>
-            인증하기
-          </Button>
-        </>
-      )}
-      {authErrors.authCode && <Text className={errorMessageCss} rank='6'>{authErrors.authCode.message}</Text>}
+      <div className={fieldCss}>
+        {submitted && (
+          <>
+            <TextField
+              placeholder="인증번호를 입력해주세요"
+              register={authRegister('authCode', {
+                validate: {
+                  empty: (value) => value !== '' || '인증번호를 입력해주세요',
+                },
+              })}
+            />
+            <Button onClick={authHandleSubmit(onAuthCodeSubmit, onAuthCodeErrors)}>
+              인증하기
+            </Button>
+          </>
+        )}
+        {authErrors.authCode && <Text className={errorMessageCss} rank='6'>{authErrors.authCode.message}</Text>}
       </div>
     </>
   );
