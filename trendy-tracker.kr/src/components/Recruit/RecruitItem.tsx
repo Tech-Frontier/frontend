@@ -4,27 +4,28 @@ import { css } from '@/../styled-system/css';
 import type { RecruitItemData } from '@/app/page';
 
 export function RecruitItem({ recruit }: { recruit: RecruitItemData }) {
-  const { company, url, techList } = recruit;
+  const { company, url, techList, title } = recruit;
   return (
     <li className={itemCss}>
       <Link href={url} target='_blank' className={itemTitleCss}>
         <Text color="#49A078" fontWeight='bold' as="span">{company}</Text>
         <Text rank='3' fontWeight='800' color="#DCE1DE" as="span">
-          채용공고 제목
+          {title}
         </Text>
       </Link>
 
-      <div className={itemTagsCss}>
-        {techList.map((tech: string) => (
-          <Tag size='medium' textColor="white" key={tech}>{tech}</Tag>
-        ))}
-      </div>
+      {techList && (
+        <div className={itemTagsCss}>
+          {techList.map((tech: string) => (
+            <Tag size='medium' textColor="white" key={tech}>{tech}</Tag>
+          ))}
+        </div>
+      )}
     </li>
   );
 }
 
 const itemCss = css({
-  padding: '28px 30px',
   borderRadius: '25px',
 
   '&:hover': {
@@ -37,7 +38,11 @@ const itemTitleCss = css({
   alignItems: 'center',
   flexWrap: 'wrap',
   gap: '10px',
-  marginBottom: '10px',
+  padding: '28px 30px',
+
+  '& + *': {
+    marginTop: '10px',
+  },
 
   '& > *': {
     wordBreak: 'keep-all',

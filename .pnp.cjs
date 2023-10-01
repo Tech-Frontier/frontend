@@ -1902,18 +1902,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@tech-frontier/ui-desktop", [\
-        ["npm:0.10.4", {\
-          "packageLocation": "./.yarn/cache/@tech-frontier-ui-desktop-npm-0.10.4-181d86fd60-e580f35d7b.zip/node_modules/@tech-frontier/ui-desktop/",\
-          "packageDependencies": [\
-            ["@tech-frontier/ui-desktop", "npm:0.10.4"],\
-            ["eslint", "npm:8.44.0"],\
-            ["eslint-config-next", "virtual:ab6dc7969d89de9fb6f03de2284ebcc00edba2663382165d01834f854ee6ef608472b53f82d143c51c1a5032c634029fc4f235b6ee27fa87d5c0b2838cf66906#npm:13.4.9"],\
-            ["react", "npm:18.2.0"],\
-            ["react-dom", "virtual:10a0e2d87ed1a685075a3ee10616dd6960201570491c7951d53f67aba6472a5226dd1f2b84a3107251f780e061422c5be760b48d43568bec74a2b7094ec270a9#npm:18.2.0"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:0.10.5", {\
           "packageLocation": "./.yarn/cache/@tech-frontier-ui-desktop-npm-0.10.5-d743c9dc1a-c155ac59d5.zip/node_modules/@tech-frontier/ui-desktop/",\
           "packageDependencies": [\
@@ -9556,6 +9544,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["react-hook-form", [\
+        ["npm:7.46.1", {\
+          "packageLocation": "./.yarn/cache/react-hook-form-npm-7.46.1-8aebde624e-9c11ba454c.zip/node_modules/react-hook-form/",\
+          "packageDependencies": [\
+            ["react-hook-form", "npm:7.46.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:14a4e2f24e2dcb8a89e6525ec24622c9c4e4da9c3972b8309a7b0b15880c44e1b04512a699c32fe3e59026ea7da6b31375f6f2e39694470bce578a585ef29bf5#npm:7.46.1", {\
+          "packageLocation": "./.yarn/__virtual__/react-hook-form-virtual-0812428c0f/0/cache/react-hook-form-npm-7.46.1-8aebde624e-9c11ba454c.zip/node_modules/react-hook-form/",\
+          "packageDependencies": [\
+            ["react-hook-form", "virtual:14a4e2f24e2dcb8a89e6525ec24622c9c4e4da9c3972b8309a7b0b15880c44e1b04512a699c32fe3e59026ea7da6b31375f6f2e39694470bce578a585ef29bf5#npm:7.46.1"],\
+            ["@types/react", "npm:18.2.14"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["react-is", [\
         ["npm:16.13.1", {\
           "packageLocation": "./.yarn/cache/react-is-npm-16.13.1-a9b9382b4f-f7a19ac349.zip/node_modules/react-is/",\
@@ -10613,7 +10623,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["trendy-tracker.kr", "workspace:trendy-tracker.kr"],\
             ["@pandacss/dev", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:0.6.0"],\
-            ["@tech-frontier/ui-desktop", "npm:0.10.4"],\
+            ["@tech-frontier/ui-desktop", "npm:0.10.5"],\
             ["@types/eslint", "npm:8.44.0"],\
             ["@types/node", "npm:20.4.1"],\
             ["@types/react", "npm:18.2.14"],\
@@ -10631,6 +10641,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["next", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:13.4.9"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:18.2.0"],\
+            ["react-hook-form", "virtual:14a4e2f24e2dcb8a89e6525ec24622c9c4e4da9c3972b8309a7b0b15880c44e1b04512a699c32fe3e59026ea7da6b31375f6f2e39694470bce578a585ef29bf5#npm:7.46.1"],\
             ["twemoji", "npm:14.0.2"],\
             ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
           ],\

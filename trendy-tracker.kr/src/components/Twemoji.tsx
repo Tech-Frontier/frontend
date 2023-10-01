@@ -11,14 +11,12 @@ function Twemoji({
   width = 72,
   height = 72,
 }: {
-  emoji: string
-  ext?: 'svg' | 'png'
-  width?: number | string
-  height?: number | string
+  emoji: string;
+  ext?: 'svg' | 'png';
+  width?: number | string;
+  height?: number | string;
 }) {
-  const HEXCodePoint = twemoji.convert.toCodePoint(
-    emoji.indexOf(U200D) < 0 ? emoji.replace(UFE0Fg, '') : emoji,
-  );
+  const HEXCodePoint = twemoji.convert.toCodePoint(emoji.indexOf(U200D) < 0 ? emoji.replace(UFE0Fg, '') : emoji);
 
   return (
     <Image
