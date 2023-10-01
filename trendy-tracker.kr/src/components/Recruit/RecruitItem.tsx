@@ -27,6 +27,7 @@ export function RecruitItem({ recruit }: { recruit: RecruitItemData }) {
 
 const itemCss = css({
   borderRadius: '25px',
+  padding: '28px 30px',
 
   '&:hover': {
     backgroundColor: '#3B3B3B',
@@ -38,7 +39,6 @@ const itemTitleCss = css({
   alignItems: 'center',
   flexWrap: 'wrap',
   gap: '10px',
-  padding: '28px 30px',
 
   '& + *': {
     marginTop: '10px',
@@ -62,4 +62,8 @@ const itemTagsCss = css({
   alignItems: 'center',
   flexWrap: 'wrap',
   gap: '6px',
+
+  '& > span': {
+    cursor: 'auto',
+  },
 });
