@@ -3,7 +3,7 @@
 import { Spacing } from '@tech-frontier/spacing';
 import { Button, Text } from '@tech-frontier/ui-desktop';
 import { InputHTMLAttributes, useState } from 'react';
-import { request } from '@/utils/request/common';
+import { request, withAlert } from '@/utils/request';
 
 export default function TestPage() {
   const [id, setId] = useState('');
@@ -43,7 +43,7 @@ export default function TestPage() {
 
         <Button
           size="small"
-          onClick={async () => {
+          onClick={withAlert(async () => {
             await request({
               method: 'POST',
               pathname: '/auth/login',
@@ -53,7 +53,7 @@ export default function TestPage() {
               },
             });
             window.location.href = '/';
-          }}
+          })}
         >로그인</Button>
         </div>
       </div>

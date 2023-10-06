@@ -60,14 +60,33 @@ export async function request(
   const response = await fetch(url, options);
 
   if (!response.ok) {
+    let message;
     try {
-      console.log(`error: ${await response.text()}`);
+      message = JSON.stringify(await response.json(), null, 2);
     } catch {
-      //
+      try {
+        message = await response.text();
+      } catch {
+        message = response.statusText;
+      }
     }
 
-    throw new Error(`[Error] ${method} ${pathname} (${response.statusText})`);
+    throw new Error(`[Error] ${method} ${pathname} ${message}`);
   }
 
   return response.json();
+}
+
+export function withAlert<T>(fn: () => Promise<T>) {
+  return async () => {
+    try {
+      return await fn();
+    } catch (error: any) {
+      if (typeof window != 'undefined') {
+        alert(error.message ?? '오류가 발생했습니다.');
+      } else {
+        throw error;
+      }
+    }
+  };
 }
