@@ -18,5 +18,14 @@ export default function Error({
     }
   }, [error, router]);
 
-  return null;
+  return (
+    <>
+      <br/>
+      오류가 발생했습니다.
+      <br/>
+      <code>
+      {error.message}
+      </code>
+    </>
+  );
 }

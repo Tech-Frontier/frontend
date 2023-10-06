@@ -4,6 +4,7 @@ import { ImpressionArea } from '@toss/impression-area';
 import { useState } from 'react';
 import { fetchRecruitList } from '@/actions/fetchRecruitList';
 import { Recruit } from '@/models/recruit';
+import { withAlert } from '@/utils/request/common';
 import { RecruitItem } from './RecruitItem';
 
 export function LoadMore() {
@@ -20,11 +21,11 @@ export function LoadMore() {
           />,
         )
       }
-    <ImpressionArea onImpressionStart={async () => {
+    <ImpressionArea onImpressionStart={withAlert(async () => {
       const { data: recruitList } = await fetchRecruitList({ pageNo });
       setData([ ...data, ...recruitList ]);
       setPageNo(pageNo + 1);
-    }}>
+    })}>
       <div>loading</div>
     </ImpressionArea>
     </>

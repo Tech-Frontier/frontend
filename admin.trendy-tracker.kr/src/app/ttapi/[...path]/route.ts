@@ -25,8 +25,18 @@ export async function GET(req: NextRequest) {
       },
     });
 
-    const data = await res.json();
-    return NextResponse.json(data);
+    try {
+      const data = await res.json();
+
+      return NextResponse.json(data);
+    } catch (error: any) {
+      if (error.message.includes('JSON at position')) {
+        const data = await res.text();
+        return NextResponse.json({ message: data }, { status: 500 });
+      }
+
+      throw error;
+    }
   } catch (error:any) {
     console.error(`Server Error(${BASE_URL}): ${error.message}`);
 
