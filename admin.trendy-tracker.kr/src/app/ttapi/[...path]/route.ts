@@ -101,7 +101,7 @@ export async function DELETE(req: NextRequest) {
       return NextResponse.json({ error: 'Internal Server Error[KEY]' }, { status: 500 });
     }
 
-    const body = await req.json();
+    const body = await (async () => { try { return await req.json(); } catch { return null; } })();
 
     const res = await fetch(`${BASE_URL}${pathname}`, {
       method: 'DELETE',
@@ -116,6 +116,11 @@ export async function DELETE(req: NextRequest) {
 
     return NextResponse.json(data);
   } catch (error:any) {
+    try {
+      console.log(`error: ${await error.text()}`);
+    } catch {
+      //
+    }
     console.error(`error from ${BASE_URL}: ${error.message}`);
 
     if (error.code != null) {
