@@ -6,10 +6,10 @@ import { RemoveButton } from './RemoveButton';
 
 const Text = ({ w, f, children }: { w: number; f: number; children: ReactNode }) => {
   return (
-    <p className={css({
+    <p style={{
       width: `${w}px`,
       fontSize: `${f}px`,
-    })}>
+    }}>
       {children}
     </p>
   );
