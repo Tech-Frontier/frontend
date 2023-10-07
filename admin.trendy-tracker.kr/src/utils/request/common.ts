@@ -54,7 +54,9 @@ export async function request(
       'Content-Type': contentType,
       ...additionalHeaders,
     },
-    body: method !== 'GET' ? JSON.stringify(params) : undefined,
+    ...(
+      method !== 'GET' ? { body: JSON.stringify(params) } : {}
+    ),
   };
 
   const response = await fetch(url, options);
