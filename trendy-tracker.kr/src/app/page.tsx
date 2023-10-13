@@ -3,18 +3,7 @@ import { MainTitle, RecruitSectionTitle, RecruitList } from '@/components/Recrui
 import { NotiField } from '@/components/Recruit/NotiField';
 import { css } from '../../styled-system/css';
 
-export interface RecruitItemData {
-  id: number;
-  title: string;
-  company: string;
-  jobCategory: string;
-  url: string;
-  createdTime: Date;
-  techList: string[];
-}
-
 export default function Recruit() {
-  // NOTE: https://gist.github.com/chibicode/fe195d792270910226c928b69a468206
   return (
     <div className={wrapperCss}>
       <div className={mainTitleContainerCss}>
