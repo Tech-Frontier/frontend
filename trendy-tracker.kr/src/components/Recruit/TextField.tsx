@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
-import { css, cx } from '@/../styled-system/css';
+import { css, cx } from '../../../styled-system/css';
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;

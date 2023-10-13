@@ -1,5 +1,5 @@
-import { css } from '@/../styled-system/css';
 import { ReactNode } from 'react';
+import { css } from '../../../styled-system/css';
 
 export function RecruitSectionTitle({ children }: { children: ReactNode }) {
   return (

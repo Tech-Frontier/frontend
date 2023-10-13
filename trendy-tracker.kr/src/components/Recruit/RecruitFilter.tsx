@@ -1,10 +1,10 @@
 'use client';
 
-import { css } from '@/../styled-system/css';
 import { Button, Text } from '@tech-frontier/ui-desktop';
 import { usePathname, useRouter } from 'next/navigation';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { fetchStackList } from '@/utils/api/stack';
+import { css } from '../../../styled-system/css';
 import Twemoji from '../Twemoji';
 
 interface StackListData {

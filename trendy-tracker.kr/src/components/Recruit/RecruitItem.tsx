@@ -1,7 +1,7 @@
-import { css } from '@/../styled-system/css';
 import { Tag, Text } from '@tech-frontier/ui-desktop';
 import Link from 'next/link';
 import type { RecruitItemData } from '@/types/Recruit/RecruitItemData';
+import { css } from '../../../styled-system/css';
 
 export function RecruitItem({ recruit }: { recruit: RecruitItemData }) {
   const { company, url, techList, title } = recruit;

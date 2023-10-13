@@ -56,8 +56,8 @@ module.exports = {
         groups: ["builtin", "external", "internal", "type", ["parent", "sibling", "index"], "unknown"],
         pathGroups: [
           {
-            pattern: "@/**",
-            group: "internal",
+            pattern: "*styled-system*",
+            group: "unknown",
           },
         ],
         pathGroupsExcludedImportTypes: ["@tanstack*"],
