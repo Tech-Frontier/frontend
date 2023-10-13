@@ -1,6 +1,6 @@
 import { RecruitItem } from '@/components/Recruit';
-import { fetchRecruitList } from '@/utils/api/recruit';
 import type { RecruitItemData } from '@/types/Recruit/RecruitItemData';
+import { fetchRecruitList } from '@/utils/api/recruit';
 
 export async function RecruitListItems({ tech }: { tech: string[] }) {
   const { data } = await fetchRecruitList({ tech });

@@ -3,8 +3,8 @@
 import { ImpressionArea } from '@toss/impression-area';
 import { useState, useCallback } from 'react';
 import { Spinner } from '@/components/Spinner';
-import { fetchRecruitList } from '@/utils/api/recruit';
 import type { RecruitItemData } from '@/types/Recruit/RecruitItemData';
+import { fetchRecruitList } from '@/utils/api/recruit';
 import { RecruitItem } from '../RecruitItem';
 
 const PAGE_SIZE = 10;

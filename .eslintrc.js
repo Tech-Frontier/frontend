@@ -54,7 +54,12 @@ module.exports = {
       "error",
       {
         groups: ["builtin", "external", "internal", "type", ["parent", "sibling", "index"], "unknown"],
-        pathGroups: [],
+        pathGroups: [
+          {
+            pattern: "@/**",
+            group: "internal",
+          },
+        ],
         pathGroupsExcludedImportTypes: ["@tanstack*"],
         alphabetize: {
           order: "asc",
