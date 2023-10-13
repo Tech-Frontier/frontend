@@ -33,7 +33,10 @@ export default function Recruit() {
         </Text>
       </RecruitSectionTitle>
 
-      <RecruitList />
+      <RecruitList>
+        <RecruitList.Items />
+        <RecruitList.LoadMore />
+      </RecruitList>
     </div>
   );
 }

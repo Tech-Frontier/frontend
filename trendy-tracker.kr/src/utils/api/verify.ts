@@ -1,5 +1,7 @@
+import { BASE_URL } from './constant';
+
 export const sendEmail = async (data: { email: string }) => {
-  const response = await fetch('https://api.trendy-tracker.kr/api/email/signup/send', {
+  const response = await fetch(`${BASE_URL}/api/email/signup/send`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -13,7 +15,7 @@ export const sendEmail = async (data: { email: string }) => {
 };
 
 export const verifyEmail = async (data: { email: string; code: string }) => {
-  const response = await fetch('https://api.trendy-tracker.kr/api/email/signup/verify', {
+  const response = await fetch(`${BASE_URL}/api/email/signup/verify`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
