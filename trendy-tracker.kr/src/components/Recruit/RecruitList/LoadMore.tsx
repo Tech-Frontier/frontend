@@ -4,12 +4,12 @@ import { ImpressionArea } from '@toss/impression-area';
 import { useState, useCallback } from 'react';
 import { Spinner } from '@/components/Spinner';
 import { fetchRecruitList } from '@/utils/api/recruit';
-import type { RecruitItemData } from '@/app/page';
+import type { RecruitItemData } from '@/types/Recruit/RecruitItemData';
 import { RecruitItem } from '../RecruitItem';
 
 const PAGE_SIZE = 10;
 
-export function LoadMore() {
+export function LoadMore({ tech }: { tech: string[] }) {
   const [pageNo, setPageNo] = useState(2);
   const [totalCount, setTotalCount] = useState<number | null>(null);
   const [recruitList, setRecruitList] = useState<RecruitItemData[]>([]);
@@ -20,12 +20,13 @@ export function LoadMore() {
     const { data: { recruitList: more, totalCount } } = await fetchRecruitList({
       pageNo,
       pageSize: PAGE_SIZE,
+      tech,
     });
 
     setRecruitList([ ...recruitList, ...more ]);
     setPageNo(pageNo + 1);
     setTotalCount(totalCount);
-  }, [pageNo, recruitList]);
+  }, [pageNo, recruitList, tech]);
 
   return (
     <>

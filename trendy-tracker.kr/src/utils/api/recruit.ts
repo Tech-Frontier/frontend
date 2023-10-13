@@ -2,8 +2,16 @@
 
 import { BASE_URL } from './constants';
 
-export const fetchRecruitList = async ({ pageNo = 1, pageSize = 10 }: { pageNo?: number; pageSize?: number } = {}) => {
-  const response = await fetch(`${BASE_URL}/api/recruit/list?pageNo=${pageNo}&pageSize=${pageSize}`, {
+interface FetchRecruitListOptions {
+  pageNo?: number;
+  pageSize?: number;
+  tech?: string[];
+}
+
+export const fetchRecruitList = async ({ pageNo = 1, pageSize = 10, tech = [] }: FetchRecruitListOptions = {}) => {
+  const techQuerystring = tech.length > 0 ? `&tech=${tech.join('&tech=')}` : '';
+  const querystring = `pageNo=${pageNo}&pageSize=${pageSize}${techQuerystring}`;
+  const response = await fetch(`${BASE_URL}/api/recruit/list?${querystring}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -12,7 +20,19 @@ export const fetchRecruitList = async ({ pageNo = 1, pageSize = 10 }: { pageNo?:
   });
 
   if (!response.ok) {
-    throw new Error(await response.text());
+    try {
+      const { status } = await response.json();
+      if (status === 'NOT_FOUND') {
+        return {
+          data: {
+            recruitList: [],
+            totalCount: 0,
+          },
+        };
+      }
+    } catch {
+      throw new Error(await response.text());
+    }
   }
 
   return response.json();
