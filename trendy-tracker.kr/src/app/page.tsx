@@ -5,7 +5,7 @@ import { RecruitFilter } from '@/components/Recruit/RecruitFilter';
 import Twemoji from '@/components/Twemoji';
 import { css } from '../../styled-system/css';
 
-export default function Recruit({ searchParams }:{ searchParams: any }) {
+export default function Recruit({ searchParams }:{ searchParams: Record<string, string | string[]> }) {
   return (
     <div className={wrapperCss}>
       <div className={mainTitleContainerCss}>
