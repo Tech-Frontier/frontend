@@ -26,7 +26,7 @@ export function RecruitItem({ data }: { data: Recruit }) {
     })}>
       <Text w={30} f={10}>{data.id}</Text>
       <Text w={50} f={12}>{data.company}</Text>
-      <Text w={60} f={12}>{data.occupation}</Text>
+      <Text w={60} f={12}>{data.jobCategory}</Text>
       <Link
         href={data.url}
         target='_blank'
