@@ -1,6 +1,6 @@
 'use server';
 
-import { BASE_URL } from './constant';
+import { BASE_URL } from './constants';
 
 export const fetchRecruitList = async ({ pageNo = 1, pageSize = 10 }: { pageNo?: number; pageSize?: number } = {}) => {
   const response = await fetch(`${BASE_URL}/api/recruit/list?pageNo=${pageNo}&pageSize=${pageSize}`, {

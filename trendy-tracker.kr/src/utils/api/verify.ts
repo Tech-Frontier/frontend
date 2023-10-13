@@ -1,4 +1,4 @@
-import { BASE_URL } from './constant';
+import { BASE_URL } from './constants';
 
 export const sendEmail = async (data: { email: string }) => {
   const response = await fetch(`${BASE_URL}/api/email/signup/send`, {
