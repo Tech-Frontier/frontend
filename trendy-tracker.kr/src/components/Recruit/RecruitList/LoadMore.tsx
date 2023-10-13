@@ -11,9 +11,9 @@ const PAGE_SIZE = 10;
 
 export function LoadMore() {
   const [pageNo, setPageNo] = useState(2);
-  const [totalCount, setTotalCount] = useState(0);
+  const [totalCount, setTotalCount] = useState<number | null>(null);
   const [recruitList, setRecruitList] = useState<RecruitItemData[]>([]);
-  const hasMore = (PAGE_SIZE + recruitList.length) < totalCount;
+  const hasMore = totalCount == null || (PAGE_SIZE + recruitList.length) < totalCount;
 
   const onImpressionStart = useCallback(async () => {
     // eslint-disable-next-line @typescript-eslint/no-shadow
