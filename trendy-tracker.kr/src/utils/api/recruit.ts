@@ -1,5 +1,9 @@
-export const fetchRecruitList = async () => {
-  const response = await fetch('https://api.trendy-tracker.kr/api/recruit/list', {
+'use server';
+
+import { BASE_URL } from './constants';
+
+export const fetchRecruitList = async ({ pageNo = 1, pageSize = 10 }: { pageNo?: number; pageSize?: number } = {}) => {
+  const response = await fetch(`${BASE_URL}/api/recruit/list?pageNo=${pageNo}&pageSize=${pageSize}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

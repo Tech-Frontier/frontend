@@ -8764,6 +8764,7 @@ __metadata:
   dependencies:
     "@pandacss/dev": ^0.6.0
     "@tech-frontier/ui-desktop": ^0.10.5
+    "@toss/impression-area": ^1.2.10
     "@types/eslint": ^8
     "@types/node": 20.4.1
     "@types/react": 18.2.14
