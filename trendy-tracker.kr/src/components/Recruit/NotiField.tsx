@@ -71,7 +71,6 @@ export function NotiField() {
       }
 
       alert('구독이 완료되었습니다!');
-
     } catch (error) {
       console.log(error);
       alert('다시 시도해주세요');
@@ -104,10 +103,12 @@ export function NotiField() {
             },
           })}
         />
-        <Button onClick={handleNotiSubmit(onEmailSubmit, onEmailErrors)}>
-          알림 받기
-        </Button>
-        {notiErrors.email && <Text className={errorMessageCss} rank='6'>{notiErrors.email.message}</Text>}
+        <Button onClick={handleNotiSubmit(onEmailSubmit, onEmailErrors)}>알림 받기</Button>
+        {notiErrors.email && (
+          <Text className={errorMessageCss} rank="6">
+            {notiErrors.email.message}
+          </Text>
+        )}
       </div>
       <div className={fieldCss}>
         {submitted && (
@@ -120,12 +121,14 @@ export function NotiField() {
                 },
               })}
             />
-            <Button onClick={authHandleSubmit(onAuthCodeSubmit, onAuthCodeErrors)}>
-              인증하기
-            </Button>
+            <Button onClick={authHandleSubmit(onAuthCodeSubmit, onAuthCodeErrors)}>인증하기</Button>
           </>
         )}
-        {authErrors.authCode && <Text className={errorMessageCss} rank='6'>{authErrors.authCode.message}</Text>}
+        {authErrors.authCode && (
+          <Text className={errorMessageCss} rank="6">
+            {authErrors.authCode.message}
+          </Text>
+        )}
       </div>
     </>
   );

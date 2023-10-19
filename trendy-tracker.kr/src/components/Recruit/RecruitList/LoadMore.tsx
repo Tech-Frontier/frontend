@@ -13,19 +13,21 @@ export function LoadMore({ tech }: { tech: string[] }) {
   const [pageNo, setPageNo] = useState(2);
   const [totalCount, setTotalCount] = useState<number | null>(null);
   const [recruitList, setRecruitList] = useState<RecruitItemData[]>([]);
-  const hasMore = totalCount == null || (PAGE_SIZE + recruitList.length) < totalCount;
+  const hasMore = totalCount == null || PAGE_SIZE + recruitList.length < totalCount;
 
   const onImpressionStart = useCallback(async () => {
     // eslint-disable-next-line @typescript-eslint/no-shadow
-    const { data: { recruitList: more, totalCount } } = await fetchRecruitList({
+    const {
+      data: { recruitList: more, totalCount: dataTotalCount },
+    } = await fetchRecruitList({
       pageNo,
       pageSize: PAGE_SIZE,
       tech,
     });
 
-    setRecruitList([ ...recruitList, ...more ]);
+    setRecruitList([...recruitList, ...more]);
     setPageNo(pageNo + 1);
-    setTotalCount(totalCount);
+    setTotalCount(dataTotalCount);
   }, [pageNo, recruitList, tech]);
 
   return (
@@ -34,9 +36,7 @@ export function LoadMore({ tech }: { tech: string[] }) {
         <RecruitItem recruit={recruit} key={recruit.id} />
       ))}
 
-      <ImpressionArea onImpressionStart={onImpressionStart}>
-        { hasMore ? <Spinner /> : null }
-      </ImpressionArea>
+      <ImpressionArea onImpressionStart={onImpressionStart}>{hasMore ? <Spinner /> : null}</ImpressionArea>
     </>
   );
 }

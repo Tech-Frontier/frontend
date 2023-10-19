@@ -5,7 +5,7 @@ import { RecruitFilter } from '@/components/Recruit/RecruitFilter';
 import Twemoji from '@/components/Twemoji';
 import { css } from '../../styled-system/css';
 
-export default function Recruit({ searchParams }:{ searchParams: Record<string, string | string[]> }) {
+export default function Recruit({ searchParams }: { searchParams: Record<string, string | string[]> }) {
   return (
     <div className={wrapperCss}>
       <div className={mainTitleContainerCss}>
@@ -19,8 +19,10 @@ export default function Recruit({ searchParams }:{ searchParams: Record<string, 
       </div>
 
       <RecruitSectionTitle>
-        <Twemoji emoji="🔎" width={48} height={48}/>
-        <Text as="h2" rank='1' fontWeight='800' color="#49A078">현재 올라온 채용 공고</Text>
+        <Twemoji emoji="🔎" width={48} height={48} />
+        <Text as="h2" rank="1" fontWeight="800" color="#49A078">
+          현재 올라온 채용 공고
+        </Text>
       </RecruitSectionTitle>
 
       <RecruitFilter tech={parseTechSearchParam(searchParams.tech)} />

@@ -12,7 +12,7 @@ interface StackListData {
   language: string;
 }
 
-export function RecruitFilter({ tech = [] } : { tech?: string[] }) {
+export function RecruitFilter({ tech = [] }: { tech?: string[] }) {
   const router = useRouter();
   const pathname = usePathname();
   const [stackList, setStackList] = useState<StackListData[]>([]);
@@ -53,13 +53,13 @@ export function RecruitFilter({ tech = [] } : { tech?: string[] }) {
     <div>
       <Button bgColor="#DCE1DE" size="small" className={buttonCss} onClick={() => setOpen조건(!open조건)}>
         <span className={buttonTitle}>
-          <Twemoji emoji='⚙️' width={24} height={24}/>
+          <Twemoji emoji="⚙️" width={24} height={24} />
           <span>검색 조건 추가하기</span>
         </span>
       </Button>
       {open조건 && (
         <div>
-         <Text color="#DEC9E9">기술 스택</Text>
+          <Text color="#DEC9E9">기술 스택</Text>
           <ul className={stackListGroup}>
             {stackList.map((stack, index) => (
               <li key={index}>
@@ -72,7 +72,9 @@ export function RecruitFilter({ tech = [] } : { tech?: string[] }) {
                     onChange={onSelectStack}
                     checked={selectedStack.includes(stack.name)}
                   />
-                  <Text as="span" color="#DCE1DE">{stack.name}</Text>
+                  <Text as="span" color="#DCE1DE">
+                    {stack.name}
+                  </Text>
                 </label>
               </li>
             ))}
