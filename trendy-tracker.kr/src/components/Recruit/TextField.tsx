@@ -11,9 +11,7 @@ interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 export function TextField(props: TextFieldProps) {
   const { error = false, className: classNameFromProp, register } = props;
 
-  return (
-    <input className={cx(inputCss, error ? inputErrorCss : undefined, classNameFromProp)} {...register} {...props} />
-  );
+  return <input className={cx(inputCss, error && inputErrorCss, classNameFromProp)} {...register} {...props} />;
 }
 
 const inputCss = css({

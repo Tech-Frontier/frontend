@@ -2,7 +2,7 @@
 
 import { Button, Text } from '@tech-frontier/ui-desktop';
 import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
+import { FieldErrors, useForm } from 'react-hook-form';
 import { sendEmail, verifyEmail } from '@/utils/api/verify';
 import { TextField } from './TextField';
 import { css } from '../../../styled-system/css';
@@ -44,7 +44,7 @@ export function NotiField() {
     }
   };
 
-  const onEmailErrors = (error: any) => {
+  const onEmailErrors = (error: FieldErrors) => {
     if (error.email) {
       setFieldError(true);
     }
@@ -77,7 +77,7 @@ export function NotiField() {
     }
   };
 
-  const onAuthCodeErrors = (error: any) => {
+  const onAuthCodeErrors = (error: FieldErrors) => {
     if (error.authCode) {
       setFieldError(true);
     }
