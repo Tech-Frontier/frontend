@@ -10,6 +10,7 @@
     "prepare": "panda codegen"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
     "@tech-frontier/ui-desktop": "^0.10.5",
     "@toss/impression-area": "^1.2.10",
     "eslint": "8.44.0",
