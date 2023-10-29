@@ -1,17 +1,45 @@
 import { InputHTMLAttributes } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
+import { useControllableState } from '@/utils/useControllableState';
 import { css, cx } from '../../../styled-system/css';
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: boolean;
   register?: UseFormRegisterReturn;
+  value?: string;
+  defaultValue?: string;
+  onValueChange?: (value: string) => void;
 }
 
 // TODO: ui-desktop package에 TextField 컴포넌트 구현
 export function TextField(props: TextFieldProps) {
-  const { error = false, className: classNameFromProp, register } = props;
+  const {
+    error = false,
+    value: valueFromProps,
+    defaultValue,
+    onValueChange,
+    className: classNameFromProps,
+    register,
+  } = props;
 
-  return <input className={cx(inputCss, error && inputErrorCss, classNameFromProp)} {...register} {...props} />;
+  const [value, setValue] = useControllableState({
+    prop: valueFromProps,
+    defaultProp: defaultValue,
+    onChange: onValueChange,
+  });
+
+  if (register) {
+    return <input className={cx(inputCss, error && inputErrorCss, classNameFromProps)} {...register} {...props} />;
+  }
+
+  return (
+    <input
+      className={cx(inputCss, error && inputErrorCss, classNameFromProps)}
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      {...props}
+    />
+  );
 }
 
 const inputCss = css({
