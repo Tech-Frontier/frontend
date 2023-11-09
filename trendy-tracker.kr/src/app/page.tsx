@@ -35,7 +35,7 @@ export default function Recruit({ searchParams }: { searchParams: Record<string,
   );
 }
 
-function parseTechSearchParam(tech: string | string[] | undefined) {
+function parseTechSearchParam(tech?: string | string[]) {
   if (tech == null) {
     return [];
   }
