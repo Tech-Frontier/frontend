@@ -2,10 +2,8 @@ import {
   Popover,
   Portal,
   PopoverContent,
-  // eslint-disable-next-line import/named
   PopoverContentProps,
   PopoverTrigger,
-  // eslint-disable-next-line import/named
   PopoverTriggerProps,
 } from '@radix-ui/react-popover';
 import React, { ReactNode, forwardRef, useState } from 'react';
@@ -13,7 +11,6 @@ import { composeEventHandlers } from '@/utils/composeEventHandlers';
 import { useCombinedRefs } from '@/utils/useCombinedRefs';
 import { useControllableState } from '@/utils/useControllableState';
 import { MultiSelectProvider, useMultiSelectContext } from './context';
-import { ScrollArea } from '../ScrollArea/ScrollArea';
 
 type MultiSelectTriggerProps = Omit<PopoverTriggerProps, 'asChild'>;
 
@@ -101,22 +98,21 @@ export interface MultiSelectContentProps extends Omit<PopoverContentProps, 'moda
 }
 
 const MultiSelectContent = forwardRef<HTMLDivElement, MultiSelectContentProps>((props, ref) => {
-  const { align, portalContainer, children, onPointerDownOutside, onFocusOutside, ...restProps } = props;
+  const { align = 'start', portalContainer, children, onPointerDownOutside, onFocusOutside, ...restProps } = props;
   const { triggerElement, onOpenChange } = useMultiSelectContext('MultiSelect.Content');
 
   return (
     <Portal container={portalContainer}>
       <PopoverContent
         ref={ref}
-        align="start"
-        sideOffset={5}
+        align={align}
+        sideOffset={10}
         onOpenAutoFocus={(e) => e.preventDefault()}
         onPointerDownOutside={composeEventHandlers(onPointerDownOutside, (e) => {
           if (triggerElement?.contains(e.target as Node)) return;
           onOpenChange?.(false);
         })}
-        onFocusOutside={composeEventHandlers(onFocusOutside, (e) => {
-          //   if (triggerElement?.contains(e.target as Node)) return;
+        onFocusOutside={composeEventHandlers(onFocusOutside, () => {
           onOpenChange?.(false);
         })}
         {...restProps}
