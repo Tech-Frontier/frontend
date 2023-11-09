@@ -19,7 +19,6 @@ type DropdownContentElement = ElementRef<typeof DropdownMenu.Content>;
 
 interface DropdownContentProps extends Omit<DropdownMenu.DropdownMenuContentProps, 'align' | 'avoidCollisions'> {
   children: ReactNode;
-  // portalContainer?: HTMLElement;
   flip?: boolean;
   align?: 'start' | 'center' | 'end' | 'fit';
 }
