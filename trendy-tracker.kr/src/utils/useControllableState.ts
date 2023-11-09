@@ -1,11 +1,11 @@
 'use client';
 
 import { useCallbackRef } from '@radix-ui/react-use-callback-ref';
-import * as React from 'react';
+import { Dispatch, SetStateAction, useCallback, useState, useRef, useEffect } from 'react';
 
 type UseControllableStateParams<T> = {
-  prop?: T | undefined;
-  defaultProp?: T | undefined;
+  prop?: T;
+  defaultProp?: T;
   onChange?: (state: T) => void;
 };
 
@@ -16,11 +16,11 @@ function useControllableState<T>({ prop, defaultProp, onChange = () => {} }: Use
     defaultProp,
     onChange,
   });
-  const isControlled = prop !== undefined;
+  const isControlled = prop != null;
   const value = isControlled ? prop : uncontrolledProp;
   const handleChange = useCallbackRef(onChange);
 
-  const setValue: React.Dispatch<React.SetStateAction<T | undefined>> = React.useCallback(
+  const setValue: Dispatch<SetStateAction<T | undefined>> = useCallback(
     (nextValue) => {
       if (isControlled) {
         const setter = nextValue as SetStateFn<T>;
@@ -37,12 +37,12 @@ function useControllableState<T>({ prop, defaultProp, onChange = () => {} }: Use
 }
 
 function useUncontrolledState<T>({ defaultProp, onChange }: Omit<UseControllableStateParams<T>, 'prop'>) {
-  const uncontrolledState = React.useState<T | undefined>(defaultProp);
+  const uncontrolledState = useState<T | undefined>(defaultProp);
   const [value] = uncontrolledState;
-  const prevValueRef = React.useRef(value);
+  const prevValueRef = useRef(value);
   const handleChange = useCallbackRef(onChange);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (prevValueRef.current !== value) {
       handleChange(value as T);
       prevValueRef.current = value;
