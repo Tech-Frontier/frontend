@@ -15,7 +15,7 @@ interface StackListData {
   language: string;
 }
 
-function parseQuery(query) {
+function parseQuery(query: string) {
   return new URLSearchParams(query).getAll('tech');
 }
 
