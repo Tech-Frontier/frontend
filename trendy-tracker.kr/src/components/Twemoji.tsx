@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { memo } from 'react';
 import twemoji from 'twemoji';
 
+// NOTE: https://gist.github.com/chibicode/fe195d792270910226c928b69a468206
+
 const U200D = String.fromCharCode(0x200d);
 const UFE0Fg = /\uFE0F/g;
 

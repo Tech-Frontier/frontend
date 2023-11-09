@@ -1,15 +1,17 @@
 import { Tag, Text } from '@tech-frontier/ui-desktop';
 import Link from 'next/link';
-import { css } from '@/../styled-system/css';
-import type { RecruitItemData } from '@/app/page';
+import type { RecruitItemData } from '@/types/Recruit/RecruitItemData';
+import { css } from '../../../styled-system/css';
 
 export function RecruitItem({ recruit }: { recruit: RecruitItemData }) {
   const { company, url, techList, title } = recruit;
   return (
     <li className={itemCss}>
-      <Link href={url} target='_blank' className={itemTitleCss}>
-        <Text color="#49A078" fontWeight='bold' as="span">{company}</Text>
-        <Text rank='3' fontWeight='800' color="#DCE1DE" as="span">
+      <Link href={url} target="_blank" className={itemTitleCss}>
+        <Text color="#49A078" fontWeight="bold" as="span">
+          {company}
+        </Text>
+        <Text rank="3" fontWeight="800" color="#DCE1DE" as="span">
           {title}
         </Text>
       </Link>
@@ -17,7 +19,9 @@ export function RecruitItem({ recruit }: { recruit: RecruitItemData }) {
       {techList && (
         <div className={itemTagsCss}>
           {techList.map((tech: string) => (
-            <Tag size='medium' textColor="white" key={tech}>{tech}</Tag>
+            <Tag size="medium" textColor="white" key={tech}>
+              {tech}
+            </Tag>
           ))}
         </div>
       )}
@@ -54,7 +58,6 @@ const itemTitleCss = css({
       transition: 'color 0.3s ease-in-out',
     },
   },
-
 });
 
 const itemTagsCss = css({

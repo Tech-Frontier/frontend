@@ -1,20 +1,11 @@
 import { Text } from '@tech-frontier/ui-desktop';
 import { MainTitle, RecruitSectionTitle, RecruitList } from '@/components/Recruit';
 import { NotiField } from '@/components/Recruit/NotiField';
+import { RecruitFilter } from '@/components/Recruit/RecruitFilter';
+import Twemoji from '@/components/Twemoji';
 import { css } from '../../styled-system/css';
 
-export interface RecruitItemData {
-  id: number;
-  title: string;
-  company: string;
-  jobCategory: string;
-  url: string;
-  createdTime: Date;
-  techList: string[];
-}
-
-export default function Recruit() {
-  // NOTE: https://gist.github.com/chibicode/fe195d792270910226c928b69a468206
+export default function Recruit({ searchParams }: { searchParams: Record<string, string | string[]> }) {
   return (
     <div className={wrapperCss}>
       <div className={mainTitleContainerCss}>
@@ -28,17 +19,32 @@ export default function Recruit() {
       </div>
 
       <RecruitSectionTitle>
-        <Text rank="4" color="#9CC5A1">
-          {/* <span style={{ color: '#FFFFFF' }}>{totalCount}</span> 개의 채용공고가 있어요 */}
+        <Twemoji emoji="🔎" width={48} height={48} />
+        <Text as="h2" rank="1" fontWeight="800" color="#49A078">
+          현재 올라온 채용 공고
         </Text>
       </RecruitSectionTitle>
 
+      <RecruitFilter tech={parseTechSearchParam(searchParams.tech)} />
+
       <RecruitList>
-        <RecruitList.Items />
-        <RecruitList.LoadMore />
+        <RecruitList.Items tech={parseTechSearchParam(searchParams.tech)} />
+        <RecruitList.LoadMore tech={parseTechSearchParam(searchParams.tech)} />
       </RecruitList>
     </div>
   );
+}
+
+function parseTechSearchParam(tech?: string | string[]) {
+  if (tech == null) {
+    return [];
+  }
+
+  if (Array.isArray(tech)) {
+    return tech;
+  }
+
+  return [tech];
 }
 
 const wrapperCss = css({
