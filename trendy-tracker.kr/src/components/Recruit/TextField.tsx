@@ -20,6 +20,7 @@ export function TextField(props: TextFieldProps) {
     onValueChange,
     className: classNameFromProps,
     register,
+    ...restProps
   } = props;
 
   const [value, setValue] = useControllableState({
@@ -37,7 +38,7 @@ export function TextField(props: TextFieldProps) {
       className={cx(inputCss, error && inputErrorCss, classNameFromProps)}
       value={value}
       onChange={(e) => setValue(e.target.value)}
-      {...props}
+      {...restProps}
     />
   );
 }
