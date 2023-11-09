@@ -1,5 +1,5 @@
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
-import React, { ElementRef, ReactNode, forwardRef } from 'react';
+import { ElementRef, ReactNode, forwardRef } from 'react';
 import { DropdownProvider } from './context';
 import { ScrollArea } from '../ScrollArea/ScrollArea';
 
