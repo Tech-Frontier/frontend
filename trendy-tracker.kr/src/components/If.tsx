@@ -1,6 +1,8 @@
+import { ReactNode } from 'react';
+
 interface Props {
   condition: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 export function If(props: Props) {
   return props.condition ? <>{props.children}</> : <></>;
