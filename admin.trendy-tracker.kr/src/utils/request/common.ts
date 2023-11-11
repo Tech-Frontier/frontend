@@ -3,7 +3,7 @@ export interface RequestContext {
 }
 
 export interface RequestOptions {
-  method?: 'GET' | 'POST' | 'DELETE';
+  method?: 'GET' | 'POST' | 'DELETE' | 'PUT';
   pathname: string;
   contentType?: string;
   params?: Record<string, any>
