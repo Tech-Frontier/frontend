@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   title: 'Trendy Tracker',
   description: '당신의 성장 실버 불렛 TT',
   openGraph: {
-    type: 'website',
     url: 'https://trendy-tracker.kr',
     title: 'Trendy Tracker',
     description: '당신의 성장 실버 불렛 TT',
