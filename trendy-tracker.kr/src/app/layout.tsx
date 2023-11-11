@@ -8,12 +8,12 @@ import type { Metadata } from 'next';
 // NOTE: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
 export const metadata: Metadata = {
   title: 'Trendy Tracker',
-  description: '당신의 성장 실버 불렛, TT',
+  description: '당신의 성장 실버 불렛 TT',
   openGraph: {
     type: 'website',
     url: 'https://trendy-tracker.kr',
     title: 'Trendy Tracker',
-    description: '당신의 성장 실버 불렛, T',
+    description: '당신의 성장 실버 불렛 TT',
     siteName: 'Trendy Tracker',
     images: [{
       url: 'https://cdn.trendy-tracker.kr/og-202311112156.jpeg',
