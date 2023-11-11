@@ -1,5 +1,5 @@
-import { NextResponse, NextRequest } from 'next/server';
 import { requireAuth } from '@/app/auth/health/route';
+import { NextResponse, NextRequest } from 'next/server';
 
 const BASE_URL = 'https://api.trendy-tracker.kr';
 
@@ -105,6 +105,47 @@ export async function DELETE(req: NextRequest) {
 
     const res = await fetch(`${BASE_URL}${pathname}`, {
       method: 'DELETE',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+        'Authorization': `Bearer ${TTAPI_TOKEN}`,
+      },
+      body: JSON.stringify(body),
+    });
+
+    const data = await res.json();
+
+    return NextResponse.json(data);
+  } catch (error:any) {
+    try {
+      console.log(`error: ${await error.text()}`);
+    } catch {
+      //
+    }
+    console.error(`error from ${BASE_URL}: ${error.message}`);
+
+    if (error.code != null) {
+      return NextResponse.json({ message: error.message }, { status: error.code });
+    }
+
+    return NextResponse.json({ message: error.message }, { status: 500 });
+  }
+}
+
+export async function PUT(req: NextRequest) {
+  try {
+    requireAuth(req);
+    const url = new URL(req.url);
+
+    const pathname = url.pathname.replace('/ttapi', '');
+
+    if (TTAPI_TOKEN === '') {
+      return NextResponse.json({ error: 'Internal Server Error[KEY]' }, { status: 500 });
+    }
+
+    const body = await (async () => { try { return await req.json(); } catch { return null; } })();
+
+    const res = await fetch(`${BASE_URL}${pathname}`, {
+      method: 'PUT',
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
         'Authorization': `Bearer ${TTAPI_TOKEN}`,
