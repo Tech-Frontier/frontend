@@ -1,7 +1,8 @@
+import { Recruit } from '@/models/recruit';
 import Link from 'next/link';
 import { ReactNode } from 'react';
-import { Recruit } from '@/models/recruit';
 import { css } from '@styled-system/css';
+import { RecruitItemTechStack } from './RecruitItemTechStack';
 import { RemoveButton } from './RemoveButton';
 
 const Text = ({ w, f, children }: { w: number; f: number; children: ReactNode }) => {
@@ -36,7 +37,7 @@ export function RecruitItem({ data }: { data: Recruit }) {
         })}>
         {data.title}
       </Link>
-      <Text w={150} f={12}>{data.techList?.join(', ')}</Text>
+      <RecruitItemTechStack id={data.id} techList={data.techList}/>
       <RemoveButton w={60} f={12} id={data.id} />
     </li>
   );

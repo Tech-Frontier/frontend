@@ -1,9 +1,9 @@
 'use client';
 
+import { request, withAlert } from '@/utils/request/common';
 import { Spacing } from '@tech-frontier/spacing';
 import { Button, Text } from '@tech-frontier/ui-desktop';
 import { InputHTMLAttributes, useState } from 'react';
-import { request, withAlert } from '@/utils/request/common';
 
 export default function TestPage() {
   const [id, setId] = useState('');
