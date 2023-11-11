@@ -2796,6 +2796,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@toss/use-overlay", [\
+        ["npm:1.3.6", {\
+          "packageLocation": "./.yarn/cache/@toss-use-overlay-npm-1.3.6-38e3e08af6-90c7cf24a9.zip/node_modules/@toss/use-overlay/",\
+          "packageDependencies": [\
+            ["@toss/use-overlay", "npm:1.3.6"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:1.3.6", {\
+          "packageLocation": "./.yarn/__virtual__/@toss-use-overlay-virtual-1e8ad86d2a/0/cache/@toss-use-overlay-npm-1.3.6-38e3e08af6-90c7cf24a9.zip/node_modules/@toss/use-overlay/",\
+          "packageDependencies": [\
+            ["@toss/use-overlay", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:1.3.6"],\
+            ["@types/react", "npm:18.2.14"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@toss/utils", [\
         ["npm:1.4.4", {\
           "packageLocation": "./.yarn/cache/@toss-utils-npm-1.4.4-4da0dd0dcb-7013b5eb19.zip/node_modules/@toss/utils/",\
@@ -4227,6 +4249,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@tech-frontier/spacing", "npm:0.1.0"],\
             ["@tech-frontier/ui-desktop", "npm:0.10.5"],\
             ["@toss/impression-area", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:1.2.10"],\
+            ["@toss/use-overlay", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:1.3.6"],\
             ["@toss/utils", "npm:1.4.4"],\
             ["@types/eslint", "npm:8.44.0"],\
             ["@types/node", "npm:20.4.1"],\

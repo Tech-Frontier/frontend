@@ -53,29 +53,28 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: ['builtin', 'external', 'internal', 'type', ['parent', 'sibling', 'index'], 'unknown'],
+        groups: ["builtin", "external", "internal", "type", ["parent", "sibling", "index"], "unknown"],
         pathGroups: [
           {
-            pattern: '*styled-system*',
-            group: 'unknown',
-          },
+            "pattern": "@/**",
+            "group": "external"
+          }
         ],
-        pathGroupsExcludedImportTypes: ['@tanstack*'],
+        pathGroupsExcludedImportTypes: ["@tanstack*"],
         alphabetize: {
           order: 'asc',
         },
       },
     ],
 
-    '@typescript-eslint/no-use-before-define': 'off',
-    'comma-dangle': 'off',
-    '@typescript-eslint/comma-dangle': 'off',
-    'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
-    'react/jsx-props-no-multi-spaces': 'error',
-    'key-spacing': ['error', { beforeColon: false }],
-    'eol-last': ['error', 'always'],
-    'no-trailing-spaces': 'error',
-    'no-multi-spaces': 'error',
-    'object-property-newline': ['error'],
+    "@typescript-eslint/no-use-before-define": "off",
+    "comma-dangle": "off",
+    "no-multiple-empty-lines": ["error", { max: 1, maxBOF: 0, maxEOF: 0 }],
+    "react/jsx-props-no-multi-spaces": "error",
+    "key-spacing": ["error", { beforeColon: false }],
+    "eol-last": ["error", "always"],
+    "no-trailing-spaces": "error",
+    "no-multi-spaces": "error",
+    "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
   },
 };
