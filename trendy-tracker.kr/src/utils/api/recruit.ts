@@ -20,20 +20,7 @@ export const fetchRecruitList = async ({ pageNo = 1, pageSize = 10, tech = [] }:
   });
 
   if (!response.ok) {
-    // TODO: 응답이 NOT_FOUND 가 아닌 빈 배열로 오면 지우기
-    try {
-      const { status } = await response.json();
-      if (status === 'NOT_FOUND') {
-        return {
-          data: {
-            recruitList: [],
-            totalCount: 0,
-          },
-        };
-      }
-    } catch {
-      throw new Error(await response.text());
-    }
+    throw new Error(await response.text());
   }
 
   return response.json();
