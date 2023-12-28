@@ -1,10 +1,10 @@
 import * as RadixScrollArea from '@radix-ui/react-scroll-area';
-import { ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 import { css } from '../../../../styled-system/css';
 
-export function ScrollArea({ children }: { children: ReactNode }) {
+export function ScrollArea({ children, style }:{ children: ReactNode, style?: CSSProperties }) {
   return (
-    <RadixScrollArea.Root className={rootCss}>
+    <RadixScrollArea.Root className={rootCss} style={style} >
       <RadixScrollArea.Viewport className={viewportCss}>{children}</RadixScrollArea.Viewport>
       <RadixScrollArea.Scrollbar className="ScrollAreaScrollbar" orientation="vertical">
         <RadixScrollArea.Thumb className="ScrollAreaThumb" />
@@ -18,17 +18,16 @@ export function ScrollArea({ children }: { children: ReactNode }) {
 }
 
 const rootCss = css({
-  width: '200px',
-  height: '225px',
+  width: '220px',
+  maxHeight: '225px',
 });
 
 const viewportCss = css({
   width: '100%',
-  height: '100%',
+  maxHeight: '225px',
 
-  // https://github.com/radix-ui/primitives/issues/926
   '& > div[style]': {
     display: 'block !important',
-    height: '100%',
+    maxHeight: '225px',
   },
 });

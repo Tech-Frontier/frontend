@@ -9,8 +9,12 @@ interface FetchRecruitListOptions {
 }
 
 export const fetchRecruitList = async ({ pageNo = 1, pageSize = 10, tech = [] }: FetchRecruitListOptions = {}) => {
-  const techQuerystring = tech.length > 0 ? `&tech=${tech.join('&tech=')}` : '';
+  const encodedTech = tech.map((x: string) => encodeURIComponent(x));
+
+  const techQuerystring = tech.length > 0 ? `&tech=${encodedTech.join('&tech=')}` : '';
+
   const querystring = `pageNo=${pageNo}&pageSize=${pageSize}${techQuerystring}`;
+
   const response = await fetch(`${BASE_URL}/api/recruit/list?${querystring}`, {
     method: 'GET',
     headers: {

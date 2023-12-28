@@ -1,3 +1,6 @@
+import { composeEventHandlers } from '@/utils/composeEventHandlers';
+import { useCombinedRefs } from '@/utils/useCombinedRefs';
+import { useControllableState } from '@/utils/useControllableState';
 import {
   Popover,
   Portal,
@@ -7,9 +10,6 @@ import {
   PopoverTriggerProps,
 } from '@radix-ui/react-popover';
 import React, { ReactNode, forwardRef, useState } from 'react';
-import { composeEventHandlers } from '@/utils/composeEventHandlers';
-import { useCombinedRefs } from '@/utils/useCombinedRefs';
-import { useControllableState } from '@/utils/useControllableState';
 import { MultiSelectProvider, useMultiSelectContext } from './context';
 
 type MultiSelectTriggerProps = Omit<PopoverTriggerProps, 'asChild'>;

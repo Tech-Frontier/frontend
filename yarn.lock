@@ -2103,6 +2103,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tech-frontier/ui-desktop@npm:^0.11.2":
+  version: 0.11.2
+  resolution: "@tech-frontier/ui-desktop@npm:0.11.2"
+  dependencies:
+    eslint: 8.44.0
+    eslint-config-next: 13.4.9
+    react: ^18
+    react-dom: ^18
+    typescript: 5.1.6
+  checksum: fa37cecc07ccc9ca5c5680655af0e89a2c8b6b6075186b1697677c8eaba03e883a4c2cd2a3e852f866e478f8fa63d5673da1b2f0c9d76c66dab8a2a10a221ccf
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -2341,6 +2354,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/react-dom@npm:18.2.7":
+  version: 18.2.7
+  resolution: "@types/react-dom@npm:18.2.7"
+  dependencies:
+    "@types/react": "*"
+  checksum: e02ea908289a7ad26053308248d2b87f6aeafd73d0e2de2a3d435947bcea0422599016ffd1c3e38ff36c42f5e1c87c7417f05b0a157e48649e4a02f21727d54f
+  languageName: node
+  linkType: hard
+
 "@types/react@npm:*, @types/react@npm:18.2.14":
   version: 18.2.14
   resolution: "@types/react@npm:18.2.14"
@@ -2349,6 +2371,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: a6a5e8cc78f486b9020d1ad009aa6c56943c68c7c6376e0f8399e9cbcd950b7b8f5d73f00200f5379f5e58d31d57d8aed24357f301d8e86108cd438ce6c8b3dd
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:18.2.18":
+  version: 18.2.18
+  resolution: "@types/react@npm:18.2.18"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 2e0d75de2b618e76780019e52478b1bec2b015a9187aea30f84518c0c3ddc639055bdfea50864aece937bad0cb0544d0100b80d30f5461e72fbc1c3c0be8b140
   languageName: node
   linkType: hard
 
@@ -9455,12 +9488,12 @@ __metadata:
     "@radix-ui/react-popover": ^1.0.7
     "@radix-ui/react-scroll-area": ^1.0.5
     "@radix-ui/react-use-callback-ref": ^1.0.1
-    "@tech-frontier/ui-desktop": ^0.10.5
+    "@tech-frontier/ui-desktop": ^0.11.2
     "@toss/impression-area": ^1.2.10
     "@types/eslint": ^8
     "@types/node": 20.4.1
-    "@types/react": 18.2.14
-    "@types/react-dom": 18.2.6
+    "@types/react": 18.2.18
+    "@types/react-dom": 18.2.7
     "@typescript-eslint/eslint-plugin": ^5.61.0
     "@typescript-eslint/parser": ^5.61.0
     eslint: ^8.44.0
