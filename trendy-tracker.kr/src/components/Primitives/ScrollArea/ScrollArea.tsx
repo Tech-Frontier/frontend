@@ -19,16 +19,15 @@ export function ScrollArea({ children }: { children: ReactNode }) {
 
 const rootCss = css({
   width: '200px',
-  height: '225px',
+  maxHeight: '225px',
 });
 
 const viewportCss = css({
   width: '100%',
-  height: '100%',
+  maxHeight: '225px',
 
-  // https://github.com/radix-ui/primitives/issues/926
   '& > div[style]': {
     display: 'block !important',
-    height: '100%',
+    maxHeight: '225px',
   },
 });
