@@ -1,8 +1,8 @@
-import { Text } from '@tech-frontier/ui-desktop';
 import { MainTitle, RecruitSectionTitle, RecruitList } from '@/components/Recruit';
 import { NotiField } from '@/components/Recruit/NotiField';
 import { RecruitFilter } from '@/components/Recruit/RecruitFilter';
 import Twemoji from '@/components/Twemoji';
+import { Text } from '@tech-frontier/ui-desktop';
 import { css } from '../../styled-system/css';
 
 export default function Recruit({ searchParams }: { searchParams: Record<string, string | string[]> }) {
