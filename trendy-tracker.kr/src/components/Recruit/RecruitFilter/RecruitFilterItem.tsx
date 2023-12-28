@@ -13,16 +13,16 @@ export function RecruitFilterItem({ stack, selectedStack, onSelectStack }: Recru
   const { name } = stack;
 
   return (
-    <li>
+    <li className={recruitFilterItemCss} data-tt-checked={selectedStack.includes(name)}>
+      <input
+        type="checkbox"
+        id={name}
+        value={name}
+        name={name}
+        onChange={onSelectStack}
+        checked={selectedStack.includes(name)}
+      />
       <label htmlFor={name} className={checkboxLabelCss}>
-        <input
-          type="checkbox"
-          id={name}
-          value={name}
-          name={name}
-          onChange={onSelectStack}
-          checked={selectedStack.includes(name)}
-        />
         <Text as="span">{name}</Text>
       </label>
     </li>
@@ -31,9 +31,63 @@ export function RecruitFilterItem({ stack, selectedStack, onSelectStack }: Recru
 
 export function RecruitFilterEmptyItem() {
   return (
-    <li>검색 결과가 없습니다.</li>
+    <li className={recruitFilterEmptyItemCss}>검색 결과가 없습니다.</li>
   );
 }
+
+const recruitFilterEmptyItemCss = css({
+  color: '#fff',
+});
+
+const recruitFilterItemCss = css({
+  borderRadius: '4px',
+
+  ['&[data-tt-checked="true"]']: {
+    backgroundColor: '#4e4e4ee6',
+  },
+
+  '& > label': {
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+    padding: '4px 4px',
+
+    '&::before': {
+      display: 'inline-block',
+      content: '""',
+      width: '20px',
+      height: '20px',
+      marginRight: '6px',
+      border: '2px solid #49a078',
+      borderRadius: '2px',
+    },
+  },
+
+  '& input': {
+    position: 'absolute',
+    clip: 'rect(0 0 0 0)',
+    width: '1px',
+    height: '1px',
+    overflow: 'hidden',
+  },
+
+  '& input:checked + label': {
+    '&::before': {
+      display: 'inline-block',
+      content: '""',
+      width: '20px',
+      height: '20px',
+      marginRight: '6px',
+      backgroundImage: 'url("/check.svg")',
+      backgroundSize: 'contain',
+      backgroundRepeat: 'no-repeat',
+    },
+  },
+
+  '&:hover': {
+    backgroundColor: '#4e4e4ee6',
+  },
+});
 
 const checkboxLabelCss = css({
   cursor: 'pointer',

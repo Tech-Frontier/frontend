@@ -89,7 +89,7 @@ export function RecruitFilter({ tech = [] }: { tech?: string[] }) {
               />
             </MultiSelect.Trigger>
             <MultiSelect.Content align="end" className={stackListGroupCss}>
-              <ScrollArea>
+              <ScrollArea width={230}>
                 <ul>
                   {filteredStackList.length > 0 ? (
                     filteredStackList.map((stack, index) => (
@@ -117,7 +117,7 @@ const stackListGroupCss = css({
   background: 'rgba(58, 58, 58, 0.9)',
   boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
   backdropFilter: 'blur(9.3px)',
-  padding: '20px',
+  padding: '10px',
   borderRadius: '10px',
 });
 
