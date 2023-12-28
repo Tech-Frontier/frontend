@@ -2,6 +2,7 @@
 
 import { fetchStackList } from '@/utils/api/stack';
 import { Tag } from '@tech-frontier/ui-desktop';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { ChangeEvent, useEffect, useState } from 'react';
 import { RecruitFilterItem, RecruitFilterEmptyItem } from './RecruitFilterItem';
@@ -67,10 +68,39 @@ export function RecruitFilter({ tech = [] }: { tech?: string[] }) {
     <div>
       <div className={selectedStackTagCss}>
         {selectedStack.map((stack, index) => (
-          <Tag bgColor="#6e6e6e" size="small" key={index}>
+          <Tag
+            key={index}
+            bgColor="#6e6e6e"
+            size="small"
+            rightAddon={
+              <button className={tagCloseButtonCss} onClick={() => {
+                setSelectedStack((prevSelectedStack) => {
+                  const newSelectedStack = prevSelectedStack.filter(
+                    (_stack) => _stack !== stack,
+                  );
+                  applyFilter(newSelectedStack);
+                  return newSelectedStack;
+                });
+              }}>
+                <Image src="/close.svg" width={14} height={14} alt={`${stack} 지우기`} />
+              </button>
+            }
+          >
             {stack}
           </Tag>
         ))}
+        {selectedStack.length > 0 && (
+          <Tag
+            bgColor="transparent"
+            className={resetTagCss}
+            onClick={() => {
+              setSelectedStack([]);
+              applyFilter([]);
+            }}
+          >
+            초기화
+          </Tag>
+        )}
       </div>
       <div className={filterContainerCss}>
         <div className={stackMultiSelectCss}>
@@ -89,7 +119,7 @@ export function RecruitFilter({ tech = [] }: { tech?: string[] }) {
               />
             </MultiSelect.Trigger>
             <MultiSelect.Content align="end" className={stackListGroupCss}>
-              <ScrollArea width={230}>
+              <ScrollArea style={{ width: 230 }}>
                 <ul>
                   {filteredStackList.length > 0 ? (
                     filteredStackList.map((stack, index) => (
@@ -141,4 +171,20 @@ const selectedStackTagCss = css({
   justifyContent: 'flex-end',
   minHeight: '30px',
   marginBottom: '10px',
+});
+
+const tagCloseButtonCss = css({
+  display: 'flex',
+  cursor: 'pointer',
+  '&:hover': {
+    backgroundColor: '#4e4e4ee6',
+    borderRadius: '2px',
+  },
+});
+
+const resetTagCss = css({
+  cursor: 'pointer',
+  '&:hover': {
+    color: '#f44336 !important',
+  },
 });

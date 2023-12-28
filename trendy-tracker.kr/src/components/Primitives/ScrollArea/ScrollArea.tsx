@@ -1,11 +1,11 @@
 import * as RadixScrollArea from '@radix-ui/react-scroll-area';
-import { ReactNode } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 import { css } from '../../../../styled-system/css';
 
-export function ScrollArea({ width = 200, height = 225, children }: { width?: number, height?: number, children: ReactNode }) {
+export function ScrollArea({ children, style }:{ children: ReactNode, style?: CSSProperties }) {
   return (
-    <RadixScrollArea.Root className={rootCss({ width, height })}>
-      <RadixScrollArea.Viewport className={viewportCss({ height })}>{children}</RadixScrollArea.Viewport>
+    <RadixScrollArea.Root className={rootCss} style={style} >
+      <RadixScrollArea.Viewport className={viewportCss}>{children}</RadixScrollArea.Viewport>
       <RadixScrollArea.Scrollbar className="ScrollAreaScrollbar" orientation="vertical">
         <RadixScrollArea.Thumb className="ScrollAreaThumb" />
       </RadixScrollArea.Scrollbar>
@@ -17,17 +17,17 @@ export function ScrollArea({ width = 200, height = 225, children }: { width?: nu
   );
 }
 
-const rootCss = ({ width, height } : { width:number; height:number }) => css({
-  width: width,
-  maxHeight: height,
+const rootCss = css({
+  width: '220px',
+  maxHeight: '225px',
 });
 
-const viewportCss = ({ height } : { height:number }) => css({
+const viewportCss = css({
   width: '100%',
-  maxHeight: height,
+  maxHeight: '225px',
 
   '& > div[style]': {
     display: 'block !important',
-    maxHeight: height,
+    maxHeight: '225px',
   },
 });
