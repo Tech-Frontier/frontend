@@ -28,6 +28,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:shared/sample"\
       },\
       {\
+        "name": "@tech-frontier/shared-tag",\
+        "reference": "workspace:shared/tag"\
+      },\
+      {\
         "name": "@tech-frontier/shared-text",\
         "reference": "workspace:shared/text"\
       },\
@@ -41,6 +45,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [\
       ["@tech-frontier/shared-button", ["workspace:shared/button"]],\
       ["@tech-frontier/shared-sample", ["workspace:shared/sample"]],\
+      ["@tech-frontier/shared-tag", ["workspace:shared/tag"]],\
       ["@tech-frontier/shared-text", ["workspace:shared/text"]],\
       ["admin.trendy-tracker.kr", ["workspace:admin.trendy-tracker.kr"]],\
       ["trendy-tracker-frontend", ["workspace:."]],\
@@ -2618,6 +2623,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./shared/sample/",\
           "packageDependencies": [\
             ["@tech-frontier/shared-sample", "workspace:shared/sample"],\
+            ["@types/eslint", "npm:8.44.0"],\
+            ["@types/node", "npm:20.4.1"],\
+            ["@types/react", "npm:18.2.14"],\
+            ["@types/react-dom", "npm:18.2.6"],\
+            ["@typescript-eslint/eslint-plugin", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:5.61.0"],\
+            ["@typescript-eslint/parser", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:5.61.0"],\
+            ["eslint", "npm:8.44.0"],\
+            ["eslint-config-airbnb-typescript", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:17.0.0"],\
+            ["eslint-config-next", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:13.4.9"],\
+            ["eslint-import-resolver-typescript", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:3.5.5"],\
+            ["eslint-plugin-import", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:2.27.5"],\
+            ["eslint-plugin-n", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:15.7.0"],\
+            ["eslint-plugin-promise", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:6.1.1"],\
+            ["eslint-plugin-react", "virtual:c950fa2cb3671142a729ceed500d4691840ba866124d5a48865c795a142c194da8ad9f0c8ab1136555ceb1e33247ce9b196d33505a057ebc52ee9eca245c9f0b#npm:7.32.2"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:a5463e013ab328c8edda4a58097ecdc6dddad23b6c9fa7c8a639613913f700482d5bc4773c8e7fa7eb31a48e7c609157178433b37f3881686f022bcb3254fb78#npm:18.2.0"],\
+            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
+      ["@tech-frontier/shared-tag", [\
+        ["workspace:shared/tag", {\
+          "packageLocation": "./shared/tag/",\
+          "packageDependencies": [\
+            ["@tech-frontier/shared-tag", "workspace:shared/tag"],\
             ["@types/eslint", "npm:8.44.0"],\
             ["@types/node", "npm:20.4.1"],\
             ["@types/react", "npm:18.2.14"],\
