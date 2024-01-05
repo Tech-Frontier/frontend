@@ -1,9 +1,9 @@
 'use client';
 
+import { fetchStackList } from '@/utils/api/stack';
 import { Button, Text, Tag } from '@tech-frontier/ui-desktop';
 import { usePathname, useRouter } from 'next/navigation';
 import { ChangeEvent, useEffect, useState } from 'react';
-import { fetchStackList } from '@/utils/api/stack';
 import { TextField } from './TextField';
 import { css } from '../../../styled-system/css';
 import { MultiSelect } from '../Primitives/MultiSelect/MultiSelect';
@@ -36,7 +36,7 @@ export function RecruitFilter({ tech = [] }: { tech?: string[] }) {
   };
 
   const applyFilter = () => {
-    const query = selectedStack.map((stack) => `tech=${stack}`).join('&');
+    const query = selectedStack.map((stack) => `tech=${encodeURIComponent(stack)}`).join('&');
     router.push(`${pathname}?${query}`);
   };
 
